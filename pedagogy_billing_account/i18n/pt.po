@@ -1,0 +1,317 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* pedagogy_billing_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-15 16:05+0000\n"
+"PO-Revision-Date: 2012-11-15 16:05+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pedagogy_billing_account
+#: view:pedagogy_billing_report:0
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: pedagogy_billing_account
+#: model:ir.model,name:pedagogy_billing_account.model_pedagogy_billing_report
+#: view:pedagogy.billing.report:0
+msgid "Billing Report"
+msgstr "Faturamento"
+
+#. module: pedagogy_billing_account
+#: view:pedagogy_billing_report:0
+msgid "Group By..."
+msgstr "Agrupar Por..."
+
+#. module: pedagogy_billing_account
+#: view:pedagogy_billing_report:0
+msgid "State"
+msgstr "Estado"
+
+#. module: pedagogy_billing_account
+#: model:ir.model,name:pedagogy_billing_account.model_pedagogy_billing_run_account_invoice_create
+msgid "Pedagogy Billing Run Account Invoice Create"
+msgstr "Criar Faturas"
+
+#. module: pedagogy_billing_account
+#: model:ir.actions.act_window,name:pedagogy_billing_account.action_pedagogy_billing_report
+#: model:ir.ui.menu,name:pedagogy_billing_account.menu_billingss_report
+msgid "Billings Report"
+msgstr "Faturamento"
+
+#. module: pedagogy_billing_account
+#: field:pedagogy.rule,product_id:0
+msgid "Product"
+msgstr "Produto"
+
+#. module: pedagogy_billing_account
+#: view:pedagogy_billing_report:0
+msgid "Paid"
+msgstr "Pago"
+
+#. module: pedagogy_billing_account
+#: model:ir.model,name:pedagogy_billing_account.model_pedagogy_billing_run
+msgid "Payslip Batches"
+msgstr "Lotes de Recibos de Vencimento"
+
+#. module: pedagogy_billing_account
+#: view:pedagogy_billing_report:0
+msgid "Filter By..."
+msgstr "Filtrar Por..."
+
+#. module: pedagogy_billing_account
+#: view:pedagogy.billing:0
+msgid "Payment Date"
+msgstr "Data de Pagamento"
+
+#. module: pedagogy_billing_account
+#: view:account.invoice:0
+msgid "Billings"
+msgstr "Faturamentos"
+
+#. module: pedagogy_billing_account
+#: view:pedagogy.billing:0
+msgid "Other Information"
+msgstr "Outras Informações"
+
+#. module: pedagogy_billing_account
+#: field:pedagogy.billing.run.account.invoice.create,group_by_invoicee:0
+#: field:pedagogy.billing.account.invoice.create,group_by_invoicee:0
+msgid "Group By Envoicee"
+msgstr "Agrupar por Faturar a"
+
+#. module: pedagogy_billing_account
+#: model:ir.model,name:pedagogy_billing_account.model_pedagogy_billing
+msgid "Pedagogy Billing"
+msgstr "Facturamento Pedagogia"
+
+#. module: pedagogy_billing_account
+#: view:pedagogy_billing_report:0
+msgid "Student"
+msgstr "Estudante"
+
+#. module: pedagogy_billing_account
+#: model:ir.model,name:pedagogy_billing_account.model_account_invoice_refund
+msgid "Invoice Refund"
+msgstr "Reembolso da fatura"
+
+#. module: pedagogy_billing_account
+#: view:pedagogy.billing:0
+msgid "Notes"
+msgstr "Anotação"
+
+#. module: pedagogy_billing_account
+#: view:pedagogy.billing.report:0
+msgid "Payslip"
+msgstr "Recibo"
+
+#. module: pedagogy_billing_account
+#: view:account.invoice:0
+#: view:pedagogy.billing:0
+msgid "Payments"
+msgstr "Pagamentos"
+
+#. module: pedagogy_billing_account
+#: view:pedagogy.billing:0
+msgid "Invoices and Payments"
+msgstr "Factura e Pagamentos"
+
+#. module: pedagogy_billing_account
+#: view:account.invoice.refund:0
+msgid "Modify Invoice: Cancels the current invoice and creates a new copy of it ready for editing."
+msgstr "Modificar fatura: Liquida esta fatura (com uma nota de crédito) e cria uma nova, idêntica pronta a ser alterada."
+
+#. module: pedagogy_billing_account
+#: sql_constraint:account.invoice:0
+msgid "Invoice Number must be unique per Company!"
+msgstr "O número da fatura deve ser único por empresa!"
+
+#. module: pedagogy_billing_account
+#: constraint:pedagogy.billing:0
+msgid "Bill 'Date From' must be before 'Date To'."
+msgstr "A data de início do faturamento deve ser antes da data de fim."
+
+#. module: pedagogy_billing_account
+#: model:ir.actions.act_window,name:pedagogy_billing_account.action_pedagogy_billing_account_invoice
+#: model:ir.actions.act_window,name:pedagogy_billing_account.action_pedagogy_billing_run_account_invoice
+#: view:pedagogy.billing.account.invoice.create:0
+#: view:pedagogy.billing.run.account.invoice.create:0
+msgid "Create Invoices"
+msgstr "Criar Faturas"
+
+#. module: pedagogy_billing_account
+#: view:pedagogy_billing_report:0
+msgid "This Year"
+msgstr "Ano Atual"
+
+#. module: pedagogy_billing_account
+#: view:pedagogy_billing_report:0
+msgid "Month"
+msgstr "Mês"
+
+#. module: pedagogy_billing_account
+#: model:ir.model,name:pedagogy_billing_account.model_pedagogy_billing_account_invoice_create
+msgid "Pedagogy Billing Account Invoice Create"
+msgstr "Criar Faturas"
+
+#. module: pedagogy_billing_account
+#: model:ir.model,name:pedagogy_billing_account.model_account_invoice
+#: view:pedagogy.billing:0
+msgid "Invoice"
+msgstr "Fatura"
+
+#. module: pedagogy_billing_account
+#: view:pedagogy_billing_report:0
+msgid "Year"
+msgstr "Ano"
+
+#. module: pedagogy_billing_account
+#: view:pedagogy.billing.account.invoice.create:0
+#: view:pedagogy.billing.run.account.invoice.create:0
+msgid "Close"
+msgstr "Fechar"
+
+#. module: pedagogy_billing_account
+#: model:ir.model,name:pedagogy_billing_account.model_pedagogy_rule
+msgid "pedagogy.rule"
+msgstr "Regra"
+
+#. module: pedagogy_billing_account
+#: view:pedagogy_billing_report:0
+msgid "Invoicee"
+msgstr "Faturar a"
+
+#. module: pedagogy_billing_account
+#: view:pedagogy_billing_report:0
+msgid "Invoiced"
+msgstr "Faturado"
+
+#. module: pedagogy_billing_account
+#: field:pedagogy.billing.report,invoice_id:0
+msgid "Student's Invoice"
+msgstr "Fatura"
+
+#. module: pedagogy_billing_account
+#: code:addons-tko/pedagogy_billing_account/pedagogy_billing.py:0
+#, python-format
+msgid "Relative to students:"
+msgstr "Referente aos estudantes:"
+
+#. module: pedagogy_billing_account
+#: code:addons-tko/pedagogy_billing_account/pedagogy_billing.py:0
+#, python-format
+msgid "Cannot delete bill(s) that are not in state draft!"
+msgstr "Só pode apagar faturamentos em estado rascunho!"
+
+#. module: pedagogy_billing_account
+#: code:addons-tko/pedagogy_billing_account/pedagogy_billing.py:0
+#, python-format
+msgid "Relative to student:"
+msgstr "Referente ao estudante:"
+
+#. module: pedagogy_billing_account
+#: code:addons-tko/pedagogy_billing_account/pedagogy_billing.py:0
+#, python-format
+msgid "VAT"
+msgstr "Nº Cont.:"
+
+#. module: pedagogy_billing_account
+#: field:pedagogy.billing.line,quantity:0 field:pedagogy.rule,quantity:0
+#: report:account.invoicees.billing:0
+msgid "Quantity"
+msgstr "Quantidade"
+
+
+#. module: pedagogy_billing
+#: report:account.invoicees.billing:0
+msgid "Address"
+msgstr "Endereço"
+
+#. module: pedagogy_billing
+#: report:account.invoicees.billing:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: pedagogy_billing
+#: report:account.invoicees.billing:0
+msgid "VAT"
+msgstr "NIF"
+
+#. module: pedagogy_billing
+#: report:account.invoicees.billing:0
+msgid "Class/Year"
+msgstr "Turma"
+
+#. module: pedagogy_billing
+#: report:account.invoicees.billing:0
+msgid "Rate"
+msgstr "Percentagem"
+
+#. module: pedagogy_billing
+#: report:account.invoicees.billing:0
+msgid "Payment Notice"
+msgstr "Aviso de Pagamento"
+
+#. module: pedagogy_billing
+#: report:account.invoicees.billing:0
+msgid "Phone:"
+msgstr "Telefone:"
+
+#. module: pedagogy_billing
+#: report:account.invoicees.billing:0
+msgid "Mail:"
+msgstr "E-mail:"
+
+#. module: pedagogy_billing
+#: report:account.invoicees.billing:0
+msgid "Contact :"
+msgstr "Funcionário :"
+
+#. module: pedagogy_billing
+#: report:account.invoicees.billing:0
+msgid "Amount"
+msgstr "Valor"
+
+#. module: pedagogy_billing
+#: report:account.invoicees.billing:0
+msgid "Date Due:"
+msgstr "Prazo de Pagamento:"
+
+#. module: pedagogy_billing
+#: report:account.invoicees.billing:0
+msgid "VAT:"
+msgstr "NIF:"
+
+#. module: pedagogy_billing
+#: report:account.invoicees.billing:0
+msgid "Signature"
+msgstr "Assinatura"
+
+#. module: pedagogy_billing
+#: report:account.invoicees.billing:0
+msgid "Bank Information:"
+msgstr "Detalhes Bancários"
+
+#. module: pedagogy_billing
+#: report:account.invoicees.billing:0
+msgid "Bank:"
+msgstr "Banco:"
+
+#. module: pedagogy_billing
+#: report:account.invoicees.billing:0
+msgid "Number:"
+msgstr "NIB:"
+
+#. module: pedagogy_billing_account
+#: field:account.move.line,student_id:0
+#: view:account.move.line.0
+msgid "Student"
+msgstr "Estudante"

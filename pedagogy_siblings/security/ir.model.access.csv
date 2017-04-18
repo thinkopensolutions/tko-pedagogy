@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_kinship_user,student_kinship_user,model_pedagogy_kinship,pedagogy_base.group_pedagogy_user,1,0,0,0
+access_kinship_secretary,student_kinship_secretary,model_pedagogy_kinship,pedagogy_base.group_pedagogy_secretary,1,1,1,1
+access_kinship_type_director,student_kinship_type_director,model_pedagogy_kinship_type,pedagogy_base.group_pedagogy_director,1,1,1,1
+access_kinship_coordinator,student_kinship_coordinator,model_pedagogy_kinship,pedagogy_base.group_pedagogy_coordinator,1,0,0,0

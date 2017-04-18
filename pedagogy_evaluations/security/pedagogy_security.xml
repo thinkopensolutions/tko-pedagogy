@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <record id="teacher_classifications_rule" model="ir.rule">
+            <field name="name">Teacher Classifications Rule</field>
+            <field ref="model_pedagogy_evaluation_student" name="model_id"/>
+            <field name="groups" eval="[(4, ref('pedagogy_base.group_pedagogy_teacher'))]"/>
+            <field name="domain_force">[('evaluation.class_discipline_teacher.teacher.user_id.id','=',user.id)]</field>
+        </record>
+        <record id="pedagogical_classifications_rule" model="ir.rule">
+            <field name="name">Pedagogical Classifications Rule</field>
+            <field ref="model_pedagogy_evaluation_student" name="model_id"/>
+            <field name="groups" eval="[(4, ref('pedagogy_base.group_pedagogy_pedagogy'))]"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record model="ir.ui.menu" id="menu_pedagogy_evaluations_base">
+            <field name="groups_id" eval="[(6,0,[ref('pedagogy_base.group_pedagogy_pedagogy')])]"/>
+        </record>
+    </data>
+</openerp>

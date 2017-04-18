@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_pedagogy_week_time_table_search">
+            <field name="name">pedagogy.week.time.table.search</field>
+            <field name="model">pedagogy.week.time.table</field>
+            <field name="arch" type="xml">
+                <search string="Week Time Table Search">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_week_time_table_calendar">
+            <field name="name">pedagogy.week.time.table.calendar</field>
+            <field name="model">pedagogy.week.time.table</field>
+            <field name="arch" type="xml">
+                <calendar date_start="date_start" date_stop="date_end" mode="week" color="class_discipline_teacher_id"
+                          string="Pedagogy Week Time Tables">
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="class_discipline_teacher_id"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_week_time_table_tree">
+            <field name="name">pedagogy.week.time.table.tree</field>
+            <field name="model">pedagogy.week.time.table</field>
+            <field name="arch" type="xml">
+                <tree string="Pedagogy Week Time Tables">
+                    <field name="class_discipline_teacher_id"/>
+                    <field name="week_day"/>
+                    <field name="hour_start" widget="float_time"/>
+                    <field name="duration" widget="float_time"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_week_time_table_search">
+            <field name="name">pedagogy.week.time.table.tree</field>
+            <field name="model">pedagogy.week.time.table</field>
+            <field name="arch" type="xml">
+                <search string="Week Time Table Search">
+                    <field name="class_year_id" widget="selection"/>
+                    <field name="discipline_id" widget="selection"/>
+                    <field name="teacher_id" widget="selection"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_week_time_table_form">
+            <field name="name">pedagogy.week.time.table.form</field>
+            <field name="model">pedagogy.week.time.table</field>
+            <field name="arch" type="xml">
+                <form string="Pedagogy Week Time Tables" version="7.0">
+                    <sheet>
+                        <group col="4">
+                            <separator string="Class and Discipline" colspan="4"/>
+                            <field name="class_discipline_teacher_id" colspan="4"/>
+                            <field name="week_day" colspan="4"/>
+                            <field name="hour_start" widget="float_time" colspan="2"/>
+                            <field name="duration" widget="float_time" colspan="2"/>
+                            <field name="hour_end" widget="float_time" colspan="4"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_week_time_tables" model="ir.actions.act_window">
+            <field name="name">Week Time Table</field>
+            <field name="res_model">pedagogy.week.time.table</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">calendar,tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+
+        <menuitem
+                id="menu_week_time_table"
+                name="Week Time Tables"
+                action="action_week_time_tables"
+                parent="menu_week_time_table_config"
+                sequence="20"/>
+
+    </data>
+</openerp>

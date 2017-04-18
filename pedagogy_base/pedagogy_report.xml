@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report
+                auto="False"
+                id="birthday"
+                model="res.partner"
+                name="birthday"
+                rml="pedagogy_base/report/birthday.rml"
+                string="Birthdays"
+                usage="default"
+                multi="True"/>
+
+        <report
+                auto="False"
+                menu="False"
+                id="classes"
+                model="pedagogy.class"
+                name="classes"
+                rml="pedagogy_base/report/classes.rml"
+                string="Classes"
+                usage="default"
+                multi="True"/>
+
+        <report
+                auto="False"
+                menu="False"
+                id="student_list"
+                model="pedagogy.enrollment"
+                name="student.list"
+                rml="pedagogy_base/report/student_list.rml"
+                string="Student List"
+                usage="default"
+                multi="True"/>
+
+        <report auto="False"
+                menu="False"
+                id="student_tutor_list"
+                model="pedagogy.enrollment"
+                name="student.tutor.list"
+                rml="pedagogy_base/report/student_tutor_list.rml"
+                string="Student and Tutor List"
+                usage="default"
+                multi="True"/>
+
+    </data>
+</openerp>

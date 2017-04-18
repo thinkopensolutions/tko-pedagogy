@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_timetable_secretary,timetable_secretary,model_pedagogy_time_table,pedagogy_base.group_pedagogy_secretary,1,0,0,0
+access_timetable_secretary_manager,timetable_secretary_manager,model_pedagogy_time_table,pedagogy_base.group_pedagogy_secretary_manager,1,1,1,1
+access_timetable_teacher,timetable_teacher,model_pedagogy_time_table,pedagogy_base.group_pedagogy_teacher,1,1,1,1
+access_timetable_user,timetable_user,model_pedagogy_time_table,pedagogy_base.group_pedagogy_user,1,0,0,0
+access_timetable_director,timetable_director,model_pedagogy_time_table,pedagogy_base.group_pedagogy_director,1,1,1,1
+access_timetable_parent,timetable_parent,model_pedagogy_time_table,pedagogy_base.group_pedagogy_parent,1,0,0,0

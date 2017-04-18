@@ -1,0 +1,73 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* pedagogy_billing_adjustments
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-19 11:59+0000\n"
+"PO-Revision-Date: 2012-12-19 11:59+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pedagogy_billing_adjustments
+#: field:pedagogy.billing.adjustment,code:0
+msgid "Code"
+msgstr "Código"
+
+#. module: pedagogy_billing_adjustments
+#: field:pedagogy.billing.adjustment,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: pedagogy_billing_adjustments
+#: field:pedagogy.billing.adjustment,discount_percentage:0
+msgid "Discount Percentage"
+msgstr "Percentagem de Acerto"
+
+#. module: pedagogy_billing_adjustments
+#: field:res.partner,billing_adjustment_ids:0
+msgid "Billing Adjustments"
+msgstr "Acertos"
+
+#. module: pedagogy_billing_adjustments
+#: view:res.partner:0
+msgid "Adjustments"
+msgstr "Acertos"
+
+#. module: pedagogy_billing_adjustments
+#: model:ir.model,name:pedagogy_billing_adjustments.model_pedagogy_billing_adjustment
+msgid "Pedagogy Billing Adjustment"
+msgstr "Acertos"
+
+#. module: pedagogy_billing_adjustments
+#: field:pedagogy.billing.adjustment,student_id:0
+msgid "Student"
+msgstr "Estudante"
+
+#. module: pedagogy_billing_adjustments
+#: model:ir.model,name:pedagogy_billing_adjustments.model_res_partner
+#: field:pedagogy.billing.adjustment,partner_id:0
+msgid "Partner"
+msgstr "Parceiro"
+
+#. module: pedagogy_billing_adjustments
+#: view:res.partner:0
+msgid "Enrollments"
+msgstr "Matrículas"
+
+#. module: pedagogy_billing_adjustments
+#: help:pedagogy.billing.adjustment,discount_percentage:0
+msgid "Discount for student"
+msgstr "Acerto"
+
+#. module: pedagogy_billing_adjustments
+#: model:ir.model,name:pedagogy_billing_adjustments.model_pedagogy_protocol
+msgid "Pedagogy Protocol"
+msgstr "Acertos"
+

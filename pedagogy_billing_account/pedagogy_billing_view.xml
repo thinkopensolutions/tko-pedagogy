@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Inherit pedagogy_rule -->
+        <record id="pedagogy_rule_with_product_form" model="ir.ui.view">
+            <field name="name">pedagogy.rule.product.form</field>
+            <field name="model">pedagogy.rule</field>
+            <field name="inherit_id" ref="pedagogy_billing.pedagogy_rule_form"/>
+            <field name="arch" type="xml">
+                <field name="note" position="before">
+                    <field name="product_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="pedagogy_rule_with_product_tree" model="ir.ui.view">
+            <field name="name">pedagogy.rule.product.tree</field>
+            <field name="model">pedagogy.rule</field>
+            <field name="inherit_id" ref="pedagogy_billing.pedagogy_rule_tree"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="product_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_billing_structure_rule_product_form" model="ir.ui.view">
+            <field name="name">billing.structure_rule_product.form</field>
+            <field name="model">pedagogy.billing.structure</field>
+            <field name="inherit_id" ref="pedagogy_billing.view_billing_structure_form"/>
+            <field name="arch" type="xml">
+                <field name="billing_rule_ids" position="replace">
+                    <field colspan="4" name="billing_rule_ids" nolabel="1"
+                           domain="[('parent_billing_rule_id','=',False)]">
+                        <tree>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="billing_category_id"/>
+                            <field name="product_id"/>
+                            <field name="sequence" groups="base.group_extended" invisible="1"/>
+                        </tree>
+                    </field>
+                </field>
+            </field>
+        </record>
+
+        <!-- Inherit pedagogy_billing -->
+        <record id="view_billing_tree_inherit" model="ir.ui.view">
+            <field name="name">pedagogy.billing.tree.inherit</field>
+            <field name="model">pedagogy.billing</field>
+            <field name="inherit_id" ref="pedagogy_billing.view_billing_tree"/>
+            <field name="arch" type="xml">
+                <field name="invoicee_id" position="after">
+                    <field name="invoice_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_billing_invoice_form" model="ir.ui.view">
+            <field name="name">pedagogy.billing.invoice.form</field>
+            <field name="model">pedagogy.billing</field>
+            <field name="inherit_id" ref="pedagogy_billing.view_billing_form"/>
+            <field name="arch" type="xml">
+                <button name="bill_verify_sheet" position="after">
+                    <button name="invoice" states="confirm" string="Invoice"
+                            class="oe_highlight" type="object"
+                            groups="pedagogy_billing.group_pedagogy_billing_manager"/>
+                </button>
+                <field name="line_ids" position="replace">
+                    <field name="line_ids" colspan="4" nolabel="1">
+                        <tree string="Billing Structure" editable="bottom" colors="blue:total == 0">
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="billing_category_id"/>
+                            <field name="display_product"/>
+                            <field name="sequence" invisible="1"/>
+                            <field name="quantity"/>
+                            <field name="rate"/>
+                            <field name="amount"/>
+                            <field name="total"/>
+                        </tree>
+                        <form string="Billing Line">
+                            <group>
+                                <field name="name" select="1"/>
+                                <field name="code" select="1"/>
+                                <field name="billing_category_id"/>
+                                <field name="sequence" groups="base.group_extended"/>
+                                <field name="quantity"/>
+                                <field name="rate"/>
+                                <field name="amount"/>
+                                <field name="total"/>
+                                <field name="billing_rule_id" groups="base.group_extended"/>
+                            </group>
+                        </form>
+                    </field>
+                </field>
+                <page string="Other Information" position="before">
+                    <page string="Invoices and Payments">
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                            <field name="run_id" domain="[('state','=','draft')]"/>
+                            <field name="invoice_id" readonly="1"/>
+                        </group>
+                        <separator string="Payments" colspan="4"/>
+                        <field name="payments_ids" readonly="1" colspan="4" nolabel="1">
+                            <field name="date" string="Payment Date"/>
+                            <field name="move_id"/>
+                            <field name="ref"/>
+                            <field name="name" groups="base.group_extended"/>
+                            <field name="journal_id"/>
+                            <field name="debit"/>
+                            <field name="credit"/>
+                            <field name="amount_currency" groups="base.group_extended"/>
+                            <field name="currency_id" groups="base.group_extended"/>
+                        </field>
+                    </page>
+                </page>
+                <page string="Other Information" position="replace">
+                    <page string="Other Information">
+                        <separator colspan="4" string="Notes"/>
+                        <field name="note" Placeholder="Add an internal note..." colspan="4" nolabel="1"/>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>

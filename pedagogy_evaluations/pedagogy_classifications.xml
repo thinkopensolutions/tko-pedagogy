@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="pedagogy_evaluation_student_form" model="ir.ui.view">
+            <field name="name">pedagogy_evaluation_student_form</field>
+            <field name="model">pedagogy.evaluation.student</field>
+            <field name="arch" type="xml">
+                <form string="Classifications" version="7.0">
+                    <header>
+                        <div class="oe_edit_only">
+                            <button name="set_confirm"
+                                    string="Confirm"
+                                    class="oe_highlight"
+                                    help="Send classification to approval"
+                                    states="draft"/>
+                            <button name="set_reprove"
+                                    string="Reprove"
+                                    help="Reprove classification"
+                                    states="confirmed"
+                                    groups="pedagogy_base.group_pedagogy_secretary_manager"/>
+                            <button name="set_approve"
+                                    string="Approve"
+                                    class="oe_highlight"
+                                    help="Approve classification"
+                                    states="confirmed"
+                                    groups="pedagogy_base.group_pedagogy_secretary_manager"/>
+                            <button name="set_suspend"
+                                    string="Suspend"
+                                    help="Suspend classification"
+                                    states="approved"
+                                    groups="pedagogy_base.group_pedagogy_secretary_manager"/>
+                            <button name="set_unsuspend"
+                                    string="Unsupend"
+                                    help="Unsuspend classification"
+                                    states="suspended"
+                                    groups="pedagogy_base.group_pedagogy_secretary_manager"/>
+                            <button name="set_cancel"
+                                    string="Cancel"
+                                    help="Cancel approved classification"
+                                    states="approved" colspan="1"
+                                    groups="pedagogy_base.group_pedagogy_secretary_manager"/>
+                            <field name="state"
+                                   widget="statusbar"
+                                   clickable="False"
+                                   statusbar_visible="draft,confirmed,approved,suspended"/>
+                        </div>
+                    </header>
+                    <sheet>
+                        <group col="4">
+                            <field name="evaluation_id" colspan="4"
+                                   on_change="onchange_filter_students(evaluation_id)"/>
+                            <field name="student_id" colspan="4"
+                                   context="{'default_is_student': 1, 'default_customer': 0}"/>
+                            <field name="date_start" on_change="onchange_date_start(date_start, evaluation_id)"
+                                   colspan="2"/>
+                            <field name="date_end" on_change="onchange_date_end(date_end, evaluation_id)" colspan="2"/>
+                        </group>
+                        <newline/>
+                        <notebook>
+                            <page string="Evaluation">
+                                <group col="4">
+                                    <field name="arithmetic_classification" readonly="1" string="Arithmetic Note"
+                                           colspan="4"/>
+                                    <field name="teacher_classification" string="Teacher Note"/>
+                                    <field name="teacher_observations"/>
+                                    <field name="final_classification" string="Final Note"/>
+                                    <field name="other_observations"/>
+                                </group>
+                            </page>
+                            <page string="Factors">
+                                <field name="factor_evaluation_student_ids" nolabel="1" string="Factors">
+                                    <tree editable="bottom" string="Factors">
+                                        <field name="factor_evaluation_student_id" invisible="1" readonly="1"/>
+                                        <field name="classification"
+                                               attrs="{'readonly': [('factor_evaluation_student_id', '&gt;', 0)]}"/>
+                                        <field name="percentage"/>
+                                        <field name="name"/>
+                                        <field name="description" readonly="1"/>
+                                    </tree>
+                                </field>
+                                <div class="oe_edit_only">
+                                    <button string="Get Factors" type="object" name="action_get_factors"/>
+                                    <button string="Calculate" type="object" name="action_calculate" icon="gtk-ok"/>
+                                </div>
+                            </page>
+                            <page string="History">
+                                <field name="history_ids" colspan="4" nolabel="1" readonly="1">
+                                    <tree string="Enrollment History">
+                                        <field name="date"/>
+                                        <field name="user_id"/>
+                                        <field name="change"/>
+                                    </tree>
+                                    <form string="Enrollment History">
+                                        <field name="date"/>
+                                        <field name="user_id"/>
+                                        <field name="change"/>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pedagogy_evaluation_student_tree" model="ir.ui.view">
+            <field name="name">pedagogy_evaluation_student_tree</field>
+            <field name="model">pedagogy.evaluation.student</field>
+            <field name="arch" type="xml">
+                <tree string="Classifications"
+                      colors="gray:state=='draft';blue:state=='confirmed';red:state=='suspended'">
+                    <field name="type_id"/>
+                    <field name="is_summative"/>
+                    <field name="student_id"/>
+                    <field name="evaluation_id"/>
+                    <field name="arithmetic_classification" string="AC"/>
+                    <field name="teacher_classification" string="TC"/>
+                    <field name="final_classification" string="FC"/>
+                    <field name="state"/>
+                    <button name="set_confirm"
+                            icon="gtk-media-play"
+                            string="Confirm"
+                            help="Send classification to approval"
+                            states="draft"/>
+                    <button name="set_approve"
+                            icon="terp-camera_test"
+                            string="Approve"
+                            help="Approve classification"
+                            states="confirmed"
+                            groups="pedagogy_base.group_pedagogy_secretary_manager"/>
+                    <button name="set_reprove"
+                            icon="gtk-media-rewind"
+                            string="Reprove"
+                            help="Cancel Enrollment"
+                            states="confirmed"
+                            groups="pedagogy_base.group_pedagogy_secretary_manager"/>
+                    <button name="set_suspend"
+                            icon="gtk-media-pause"
+                            string="Suspend"
+                            help="Suspend classification"
+                            states="approved"
+                            groups="pedagogy_base.group_pedagogy_secretary_manager"/>
+                    <button name="set_unsuspend"
+                            icon="terp-camera_test"
+                            string="Unsuspende"
+                            help="Unsuspend classification"
+                            states="suspended"
+                            groups="pedagogy_base.group_pedagogy_secretary_manager"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pedagogy_evaluation_student_search" model="ir.ui.view">
+            <field name="name">pedagogy_evaluation_student_search</field>
+            <field name="model">pedagogy.evaluation.student</field>
+            <field name="arch" type="xml">
+                <search string="Classifications">
+                    <field name="year_id"/>
+                    <field name="evaluation_id"/>
+                    <field name="type_id"/>
+                    <field name="student_id"/>
+                    <group string="School Year">
+                        <filter
+                                string="Future Years"
+                                name="future_years"
+                                domain="[('year_id.this_year', '=', 'future')]"/>
+                        <filter
+                                string="Next Year"
+                                name="next_year"
+                                domain="[('year_id.this_year', '=', 'next')]"/>
+                        <filter
+                                string="This Year"
+                                name="this_year"
+                                domain="[('year_id.this_year', '=', 'this')]"/>
+                        <filter
+                                string="Last Year"
+                                name="last_year"
+                                domain="[('year_id.this_year', '=', 'last')]"/>
+                        <filter
+                                string="Old Years"
+                                name="old_years"
+                                domain="[('year_id.this_year', '=', 'old')]"/>
+                    </group>
+                    <filter string="Draft"
+                            name="draft"
+                            domain="[('state','=','draft')]"/>
+                    <filter string="Confirmed"
+                            name="confirmed"
+                            domain="[('state','=','confirmed')]"/>
+                    <filter string="Approved"
+                            name="approved"
+                            domain="[('state','=','approved')]"/>
+                    <filter string="Suspended"
+                            name="suspended"
+                            domain="[('state','=','suspended')]"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Student" name="student_id" context="{'group_by':'student_id'}"/>
+                        <filter string="Evaluation" name="evaluation_id" context="{'group_by':'evaluation_id'}"/>
+                        <filter string="State" name="state" context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="pedagogy_evaluation_student_action" model="ir.actions.act_window">
+            <field name="name">Classifications</field>
+            <field name="res_model">pedagogy.evaluation.student</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="pedagogy_evaluation_student_search"/>
+            <field name="context">{"search_default_this_year": "1"}</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a classification.
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+                id="menu_classifications_root"
+                name="Classifications"
+                parent="pedagogy_base.menu_pedagogy"
+        />
+
+        <menuitem
+                id="menu_pedagogy_classifications"
+                name="Classifications"
+                parent="menu_classifications_root"
+                action="pedagogy_evaluation_student_action"
+                sequence="10"
+        />
+
+    </data>
+</openerp>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_pedagogy_discipline_area_form">
+            <field name="name">pedagogy.discipline_area.form</field>
+            <field name="model">pedagogy.discipline_area</field>
+            <field name="arch" type="xml">
+                <form string="Discipline Area" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="discipline_ids">
+                                <tree string="Disciplines">
+                                    <field name="code"/>
+                                    <field name="name"/>
+                                </tree>
+                                <form string="Discipline">
+                                    <field name="code"/>
+                                    <field name="name"/>
+                                </form>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_discipline_areas" model="ir.actions.act_window">
+            <field name="name">Discipline Areas</field>
+            <field name="res_model">pedagogy.discipline_area</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+
+        <menuitem
+                id="menu_discipline_areas"
+                name="Discipline Areas"
+                action="action_discipline_areas"
+                parent="menu_disciplines_config"
+                sequence="10"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem
+                id="menu_billing_configuration"
+                name="Billing"
+                parent="account.menu_finance"
+                sequence="70"/>
+
+        <menuitem
+                id="menu_pedagogy_billing"
+                name="Billing"
+                parent="account.menu_finance_receivables"
+                sequence="5"
+        />
+
+        <record id="pedagogy_rule_form" model="ir.ui.view">
+            <field name="name">pedagogy.rule.form</field>
+            <field name="model">pedagogy.rule</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <form string="Billing Rules" version="7.0">
+                    <label for="name" class="oe_edit_only"/>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <label for="billing_category_id" class="oe_edit_only"/>
+                    <h2>
+                        <field name="billing_category_id"/>
+                    </h2>
+                    <group col="4">
+                        <field name="code"/>
+                        <field name="sequence"/>
+                        <field name="active"/>
+                        <field name="appears_on_payslip"/>
+                        <field name="company_id" widget="selection" groups="base.group_multi_company"/>
+                    </group>
+                    <notebook>
+                        <page string="General">
+                            <group>
+                                <separator string="Conditions" colspan="4"/>
+                                <field name="condition_select"/>
+                                <field name="condition_python"
+                                       attrs="{'invisible':[('condition_select','&lt;&gt;','python')], 'required': [('condition_select','=','python')]}"/>
+                                <field name="condition_range"
+                                       attrs="{'invisible':[('condition_select','&lt;&gt;','range')], 'required':[('condition_select','=','range')]}"/>
+                                <field name="condition_range_min"
+                                       attrs="{'invisible':[('condition_select','&lt;&gt;','range')], 'required':[('condition_select','=','range')]}"/>
+                                <field name="condition_range_max"
+                                       attrs="{'invisible':[('condition_select','&lt;&gt;','range')], 'required':[('condition_select','=','range')]}"/>
+                                <separator string="Computation" colspan="4"/>
+                                <field name="amount_select"/>
+                                <field name="amount_percentage_base"
+                                       attrs="{'invisible':[('amount_select','&lt;&gt;','percentage')], 'required': [('amount_select','=','percentage')]}"/>
+                                <field name="quantity"
+                                       attrs="{'invisible':[('amount_select','=','code')], 'required':[('amount_select','!=','code')]}"/>
+                                <field name="amount_fix"
+                                       attrs="{'invisible':[('amount_select','&lt;&gt;','fix')], 'required':[('amount_select','=','fix')]}"/>
+                                <field name="amount_percentage"
+                                       attrs="{'invisible':[('amount_select','&lt;&gt;','percentage')], 'required':[('amount_select','=','percentage')]}"/>
+                                <field name="amount_python_compute"
+                                       attrs="{'invisible':[('amount_select','&lt;&gt;','code')], 'required':[('amount_select','=','code')]}"/>
+                            </group>
+                        </page>
+                        <page string="Child Rules">
+                            <field name="parent_billing_rule_id"/>
+                            <separator string="Children definition" colspan="4"/>
+                            <field colspan="4" name="billing_child_ids" nolabel="1"/>
+                        </page>
+                        <page string="Inputs">
+                            <field name="billing_input_ids" colspan="4" nolabel="1">
+                                <tree string="Input Data" editable="bottom">
+                                    <field name="name"/>
+                                    <field name="code"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Description">
+                            <field name="note" colspan="4" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record id="pedagogy_rule_tree" model="ir.ui.view">
+            <field name="name">pedagogy.rule.tree</field>
+            <field name="model">pedagogy.rule</field>
+            <field name="field_parent">child_ids</field>
+            <field eval="20" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Rules">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="billing_category_id"/>
+                    <field name="sequence"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_billing_category_tree_view" model="ir.ui.view">
+            <field name="name">hr.salary.rule.category.tree.view</field>
+            <field name="model">hr.salary.rule.category</field>
+            <field name="field_parent">children_ids</field>
+            <field name="arch" type="xml">
+                <tree string="Billing Rule Categories">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="parent_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pedagogy_rule_list" model="ir.ui.view">
+            <field name="name">pedagogy.rule.list</field>
+            <field name="model">pedagogy.rule</field>
+            <field name="arch" type="xml">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="billing_category_id"/>
+                <field name="sequence" groups="base.group_" invisible="1"/>
+            </field>
+        </record>
+
+        <record id="view_pedagogy_rule_filter" model="ir.ui.view">
+            <field name="name">pedagogy.rule.select</field>
+            <field name="model">pedagogy.rule</field>
+            <field name="arch" type="xml">
+                <search string="Search Billing Rule">
+                    <group col="8" colspan="4">
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="billing_category_id"/>
+                        <field name="condition_range_min"/>
+                    </group>
+                    <newline/>
+                    <group col="8" colspan="4" expand="0" string="Group By...">
+                        <filter string="Category" name="head" context="{'group_by':'billing_category_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_billing_rules" model="ir.actions.act_window">
+            <field name="name">Billing Rules</field>
+            <field name="res_model">pedagogy.rule</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="pedagogy_rule_tree"/>
+            <field name="domain">[('parent_billing_rule_id','=',False)]</field>
+            <field name="search_view_id" ref="view_pedagogy_rule_filter"/>
+        </record>
+
+        <menuitem
+                id="menu_billing_rules"
+                name="Fee Rules"
+                parent="menu_billing_configuration"
+                action="action_billing_rules"/>
+
+        <!--        Billing Rules Category -->
+        <record id="pedagogy_rule_category_form" model="ir.ui.view">
+            <field name="name">pedagogy.rule.category.form</field>
+            <field name="model">pedagogy.rule.category</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Salary Categories" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="billing_parent_id"/>
+                        </group>
+                        <separator string="Notes"/>
+                        <field name="note" nolabel="1"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pedagogy_rule_category_tree" model="ir.ui.view">
+            <field name="name">pedagogy.rule.category.tree</field>
+            <field name="model">pedagogy.rule.category</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Billing Rule Categories">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="billing_parent_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_billing_rule_category_filter" model="ir.ui.view">
+            <field name="name">pedagogy.rule.category.select</field>
+            <field name="model">pedagogy.rule.category</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Billing Rule Categories">
+                    <field name="name"/>
+                    <field name="code"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_billing_rule_category" model="ir.actions.act_window">
+            <field name="name">Billing Rule Categories</field>
+            <field name="res_model">pedagogy.rule.category</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="pedagogy_rule_category_tree"/>
+            <field name="search_view_id" ref="view_billing_rule_category_filter"/>
+        </record>
+
+        <menuitem
+                id="menu_billing_rules_category"
+                name="Fee Rules Category"
+                parent="menu_billing_configuration"
+                action="action_billing_rule_category"/>
+
+
+        <!--        Billing Structures -->
+
+        <record id="view_billing_structure_list_view" model="ir.ui.view">
+            <field name="name">billing.structure.tree</field>
+            <field name="model">pedagogy.billing.structure</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Billing Function">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="billing_rule_ids"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_billing_structure_form" model="ir.ui.view">
+            <field name="name">billing.structure.form</field>
+            <field name="model">pedagogy.billing.structure</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Billing Structure" version="7.0">
+                    <sheet>
+                        <group col="6" colspan="6">
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="billing_parent_id"/>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Billing Rules">
+                                <field colspan="4" name="billing_rule_ids" nolabel="1"
+                                       domain="[('parent_billing_rule_id','=',False)]">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                        <field name="billing_category_id"/>
+                                        <field name="sequence" groups="base.group_" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_billing_structure_filter" model="ir.ui.view">
+            <field name="name">billing.structure.select</field>
+            <field name="model">pedagogy.billing.structure</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Billing Structures">
+                    <group col="8" colspan="4">
+                        <field name="name"/>
+                        <field name="code"/>
+                    </group>
+                    <newline/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_billing_structure" model="ir.actions.act_window">
+            <field name="name">Billing Structure</field>
+            <field name="res_model">pedagogy.billing.structure</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_billing_structure_list_view"/>
+            <field name="search_view_id" ref="view_billing_structure_filter"/>
+        </record>
+
+        <menuitem
+                id="menu_billing_structure"
+                name="Fee Structure"
+                parent="menu_billing_configuration"
+                action="action_billing_structure"/>
+
+        <!--         Billing -->
+        <record id="view_billing_tree" model="ir.ui.view">
+            <field name="name">pedagogy.billing.tree</field>
+            <field name="model">pedagogy.billing</field>
+            <field name="arch" type="xml">
+                <tree colors="blue:state == 'draft';black:state == 'confirm';gray:state == 'cancel'" string="Billings">
+                    <field name="number"/>
+                    <field name="class_year_id"/>
+                    <field name="student_id"/>
+                    <field name="invoicee_id"/>
+                    <field name="amount_total" sum="Total"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="state"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="run_id" invisible="1"/>
+                    <field name="class_year_curricular" invisible="1"/>
+                    <field name="month" invisible="1"/>
+                    <field name="enrollment_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <act_window name="Billing Computation Details"
+                    context="{'default_bill_id': active_id,'search_default_bill_id': active_id}"
+                    res_model="pedagogy.billing.line"
+                    src_model="pedagogy.billing"
+                    id="act_billing_lines"/>
+
+        <record id="view_billing_form" model="ir.ui.view">
+            <field name="name">pedagogy.billing.form</field>
+            <field name="model">pedagogy.billing</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Payslip" version="7.0">
+                    <header>
+                        <button string="Set to Draft" name="draft" states="cancel,confirm"/>
+                        <button string="Confirm" class="oe_highlight" name="bill_verify_sheet" states="draft"/>
+                        <button string="Compute Sheet" class="oe_highlight" name="pedagogy_compute_sheet" type="object"
+                                states="draft"/>
+                        <!--                         <button string="Refund" icon="gtk-execute" name="refund_sheet" states="confirm,done" type='object'/> -->
+                        <button string="Cancel" name="cancel_sheet" states="draft,confirm"/>
+                        <field name="state"
+                               widget="statusbar"
+                               clickable="False"
+                               statusbar_visible="draft,confirm,cancel"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_right oe_button_box">
+                            <button name="%(act_billing_lines)d" string="Billing Computation Details" type="action"/>
+                        </div>
+                        <div class="oe_title">
+                            <label for="student_id" class="oe_edit_only"/>
+                            <h1>
+                                <field name="student_id" on_change="onchange_student(student_id, date_from)"/>
+                            </h1>
+                        </div>
+                        <group col="4">
+                            <field name="month" on_change="on_change_month(month)" colspan="4"/>
+                            <field name="date_from"
+                                   on_change="onchange_student_id(date_from, date_to, student_id, enrollment_id)"
+                                   colspan="2"/>
+                            <field name="date_to" colspan="2"/>
+                            <field name="enrollment_id"
+                                   on_change="onchange_enrollment_id(date_from, date_to, student_id, enrollment_id)"/>
+                            <field name="class_year_id"/>
+                            <field name="invoicee_id"/>
+                            <field name="payment_term_id"/>
+                            <field name="struct_id"
+                                   on_change="onchange_struct_id(date_from, date_to, student_id, enrollment_id, struct_id)"
+                                   attrs="{'required':[('enrollment_id','&lt;&gt;',False)]}"/>
+                            <field name="credit_note"/>
+                            <field name="name"/>
+                        </group>
+                        <notebook>
+                            <page string="Inputs">
+                                <separator string="Inputs"/>
+                                <field name="input_line_ids" colspan="4" nolabel="1">
+                                    <tree string="Input Data" editable="bottom">
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                        <field name="amount"/>
+                                        <field name="sequence" invisible="True"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Billing Computation">
+                                <field name="line_ids" colspan="4" nolabel="1">
+                                    <tree string="Billing Structure" editable="bottom" colors="blue:total == 0">
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                        <field name="billing_category_id"/>
+                                        <field name="sequence" invisible="1"/>
+                                        <field name="quantity"/>
+                                        <field name="rate"/>
+                                        <field name="amount"/>
+                                        <field name="total"/>
+                                    </tree>
+                                </field>
+                                <div class="oe_edit_only">
+                                    <button string="Compute Sheet" name="pedagogy_compute_sheet" type="object"
+                                            states="draft" icon="gtk-refresh"/>
+                                </div>
+                            </page>
+                            <page string="Details By Billing Rule Category">
+                                <field name="details_by_rule_category" context="{'group_by':'billing_category_id'}"
+                                       domain="[('appears_on_payslip', '=', True)]" nolabel="1">
+                                    <tree string="Billing Lines" colors="blue:total == 0">
+                                        <field name="billing_category_id"/>
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                        <field name="total"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Other Information">
+                                <separator colspan="4" string="Other Information"/>
+                                <group>
+                                    <field name="company_id" groups="base.group_multi_company"/>
+                                    <field name="run_id" domain="[('state','=','draft')]"/>
+                                </group>
+                                <separator colspan="4" string="Notes"/>
+                                <field name="note" Placeholder="Add an internal note..." colspan="4" nolabel="1"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_billing_filter" model="ir.ui.view">
+            <field name="name">pedagogy.billing.select</field>
+            <field name="model">pedagogy.billing</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search Payslips">
+                    <group>
+                        <filter string="Draft" name="Draft" domain="[('state','=','draft')]" help="Draft Bill"/>
+                        <filter string="Confirmed" name="Confirmed" domain="[('state','=','confirm')]"/>
+                        <filter string="Unpaid" name="Unpaid" domain="[('state','=','invoiced')]"/>
+                        <field name="number"/>
+                        <field name="student_id"/>
+                        <field name="name"/>
+                        <field name="date_from"/>
+                        <field name="run_id"/>
+                    </group>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Students" name="employee_id" context="{'group_by':'student_id'}"/>
+                        <filter string="Billing Batch" name="run_id" context="{'group_by':'run_id'}"/>
+                        <filter string="Companies" name="company_id" groups="base.group_multi_company"
+                                context="{'group_by':'company_id'}"/>
+                        <filter string="States" name="state" context="{'group_by':'state'}"/>
+                        <filter string="Month" name="month" context="{'group_by':'month'}"/>
+                        <filter string="Enrollment" name="enrollment" context="{'group_by':'enrollment_id'}"/>
+                        <filter string="Class Year" name="class_year_id" context="{'group_by':'class_year_id'}"/>
+                        <filter string="Curricular" name="class_year_curricular"
+                                context="{'group_by':'class_year_curricular'}"/>
+                        <filter string="Invoicee" name="invoicee" context="{'group_by':'invoicee_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="action_view_billing_form" model="ir.actions.act_window">
+            <field name="name">Students Billing</field>
+            <field name="res_model">pedagogy.billing</field>
+            <field name="view_type">form</field>
+            <field name="context">{'search_default_Confirmed':1}</field>
+            <field name="view_id" ref="view_billing_tree"/>
+            <field name="search_view_id" ref="view_billing_filter"/>
+        </record>
+
+        <menuitem
+                action="action_view_billing_form"
+                id="menu_billing"
+                name="Billing"
+                parent="menu_pedagogy_billing"/>
+
+        <!-- Billing Run -->
+
+        <record id="billing_run_filter" model="ir.ui.view">
+            <field name="name">billing.run.search</field>
+            <field name="model">pedagogy.billing.run</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search Billing Batches">
+                    <filter string="Draft" name="Draft" domain="[('state','=','draft')]" help="Draft Billing Batches"/>
+                    <filter string="Done" name="Close" domain="[('state','=','close')]" help="Done Billing Batches"/>
+                    <field name="name"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="billing_run_tree" model="ir.ui.view">
+            <field name="name">billing.run.tree</field>
+            <field name="model">pedagogy.billing.run</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Billing Batches">
+                    <field name="name"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="credit_note"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="billing_run_form" model="ir.ui.view">
+            <field name="name">billing.run.form</field>
+            <field name="model">pedagogy.billing.run</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Billing Batches" version="7.0">
+                    <header>
+                        <button name="draft_payslip_run" type="object" string="Set to Draft" states="close"/>
+                        <button name="close_payslip_run" type="object" class="oe_highlight" string="Confirm"
+                                states="draft"/>
+                        <field name="state"
+                               widget="statusbar"
+                               clickable="False"
+                               statusbar_visible="draft,close"/>
+                    </header>
+                    <sheet>
+                        <h2>
+                            Period
+                            <field name="month" on_change="on_change_month(month, context)"/>
+                        </h2>
+                        <group col="4">
+                            <field name="name" colspan="4"/>
+                            <field name="date_start" colspan="2"/>
+                            <field name="date_end" colspan="2"/>
+                            <field name="credit_note"/>
+                        </group>
+                        <separator string="Billings"/>
+                        <field name="bill_ids" nolabel="1"/>
+                        <div class="oe_edit_only">
+
+                        </div>
+                        <footer class="oe_edit_only">
+                            <button name="%(action_billing_by_class)d" type="action" states="draft" class="oe_highlight"
+                                    string="Generate by Class"/>
+                            <button name="%(action_billing_by_students)d" type="action" states="draft"
+                                    class="oe_highlight" string="Generate by Student"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_billing_run_tree" model="ir.actions.act_window">
+            <field name="name">Billing Batches</field>
+            <field name="res_model">pedagogy.billing.run</field>
+            <field name="view_type">form</field>
+            <field name="context">{'search_default_Draft':1}</field>
+            <field name="view_id" ref="billing_run_tree"/>
+            <field name="search_view_id" ref="billing_run_filter"/>
+        </record>
+
+        <menuitem
+                action="action_billing_run_tree"
+                id="menu_billing_run"
+                name="Billing Batches"
+                parent="menu_pedagogy_billing"/>
+
+    </data>
+</openerp>
