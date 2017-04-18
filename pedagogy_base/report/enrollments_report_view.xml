@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="pedagogy_enrollments_report_form" model="ir.ui.view">
+            <field name="name">Enrollment</field>
+            <field name="model">pedagogy.enrollments.report</field>
+            <field name="arch" type="xml">
+                <form string="Enrollment">
+                    <field name="number"/>
+                    <field name="state"/>
+                    <field name="student_id"/>
+                    <field name="class_id"/>
+                    <field name="year_id"/>
+                    <field name="group_id"/>
+                    <field name="area_id"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="pedagogy_enrollments_report_tree" model="ir.ui.view">
+            <field name="name">Enrollments</field>
+            <field name="model">pedagogy.enrollments.report</field>
+            <field name="arch" type="xml">
+                <tree string="Enrollments Report">
+                    <field name="number"/>
+                    <field name="student_id"/>
+                    <field name="year_id"/>
+                    <field name="area_id"/>
+                    <field name="group_id"/>
+                    <field name="class_id"/>
+                    <field name="state"/>
+                    <field name="date_start" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pedagogy_enrollments_report_search" model="ir.ui.view">
+            <field name="name">Enrollments</field>
+            <field name="model">pedagogy.enrollments.report</field>
+            <field name="arch" type="xml">
+                <search string="Enrollments Report">
+                    <group>
+                        <field name="number"/>
+                        <field name="year_id"/>
+                        <field name="class_id"/>
+                        <field name="student_id"/>
+                        <field name="state"/>
+                    </group>
+                    <group string="Enrollment State">
+                        <filter
+                                string="New"
+                                name="new"
+                                domain="[('state','=','new')]"/>
+                        <filter
+                                string="Pre-Inscripted"
+                                name="pre_inscripted"
+                                domain="[('state','=','pre_enrolled')]"/>
+                        <filter
+                                string="Inscripted"
+                                name="inscripted"
+                                domain="[('state','=','enrolled')]"/>
+                        <filter
+                                string="Suspended"
+                                name="suspended"
+                                domain="[('state','=','suspended')]"/>
+                        <filter
+                                string="Canceled"
+                                name="canceled"
+                                domain="[('state','=','canceled')]"/>
+                    </group>
+                    <group string="School Year">
+                        <filter
+                                string="Future Years"
+                                name="future_years"
+                                domain="[('year_id.this_year', '=', 'future')]"/>
+                        <filter
+                                string="Next Year"
+                                name="next_year"
+                                domain="[('year_id.this_year', '=', 'next')]"/>
+                        <filter
+                                string="This Year"
+                                name="this_year"
+                                domain="[('year_id.this_year', '=', 'this')]"/>
+                        <filter
+                                string="Last Year"
+                                name="last_year"
+                                domain="[('year_id.this_year', '=', 'last')]"/>
+                        <filter
+                                string="Old Years"
+                                name="old_years"
+                                domain="[('year_id.this_year', '=', 'old')]"/>
+                    </group>
+                    <group string="Group By...">
+                        <filter string="Year" name="year_id" context="{'group_by':'year_id'}"/>
+                        <filter string="Area" name="area_id" context="{'group_by':'area_id'}"/>
+                        <filter string="Group" name="group_id" context="{'group_by':'group_id'}"/>
+                        <filter string="Class" name="class_id" context="{'group_by':'class_id'}"/>
+                        <filter string="Student" name="student_id" context="{'group_by':'student_id'}"/>
+                        <filter string="State" name="state" context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="pedagogy_enrollments_report_action" model="ir.actions.act_window">
+            <field name="name">pedagogy_enrollments_report_action</field>
+            <field name="res_model">pedagogy.enrollments.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="pedagogy_enrollments_report_search"/>
+            <field name="view_id" ref="pedagogy_enrollments_report_tree"/>
+            <field name="context">{"search_default_this_year": "this", "search_default_inscripted": 1}</field>
+            <field name="domain">[]</field>
+        </record>
+
+        <menuitem id="menu_action_enrollments_report_all"
+                  action="pedagogy_enrollments_report_action"
+                  name="Enrollments"
+                  parent="menu_pedagogy_reporting"
+                  sequence="1"/>
+
+    </data>
+</openerp>

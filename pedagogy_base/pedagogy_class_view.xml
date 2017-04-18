@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="pedagogy_class_form" model="ir.ui.view">
+            <field name="name">pedagogy_class_form</field>
+            <field name="model">pedagogy.class</field>
+            <field name="arch" type="xml">
+                <form string="Class" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="group_id"/>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pedagogy_class_tree" model="ir.ui.view">
+            <field name="name">pedagogy_class_tree</field>
+            <field name="model">pedagogy.class</field>
+            <field name="arch" type="xml">
+                <tree string="Classes">
+                    <field name="name"/>
+                    <field name="group_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pedagogy_class_search" model="ir.ui.view">
+            <field name="name">pedagogy_class_search</field>
+            <field name="model">pedagogy.class</field>
+            <field name="arch" type="xml">
+                <search string="Search Class">
+                    <field name="name"/>
+                    <field name="group_id"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Group" context="{'group_by': 'group_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="pedagogy_class_action" model="ir.actions.act_window">
+            <field name="name">Classes</field>
+            <field name="res_model">pedagogy.class</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="search_view_id" ref="pedagogy_class_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a class.
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+                id="menu_classes"
+                name="Classes"
+                parent="menu_classes_years"
+                action="pedagogy_class_action"
+                sequence="10"/>
+
+    </data>
+</openerp>

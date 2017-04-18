@@ -1,0 +1,173 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* pedagogy_extra_activities
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-28 19:27+0000\n"
+"PO-Revision-Date: 2013-05-28 19:27+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pedagogy_extra_activities
+#: model:ir.actions.act_window,help:pedagogy_extra_activities.pedagogy_class_curricular_action
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a curricular class.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adiucionar uma turma curricular.\n"
+"              </p>\n"
+"            "
+
+#. module: pedagogy_extra_activities
+#: model:ir.actions.act_window,help:pedagogy_extra_activities.pedagogy_class_type_action
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a class type.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar um tipo de turma.\n"
+"              </p>\n"
+"            "
+
+#. module: pedagogy_extra_activities
+#: view:pedagogy.class:0
+#: view:pedagogy.class.year:0
+msgid "Curricular Class"
+msgstr "Turma Curricular"
+
+#. module: pedagogy_extra_activities
+#: view:pedagogy.class.type:0
+msgid "Curricular"
+msgstr "Curricular"
+
+#. module: pedagogy_extra_activities
+#: model:ir.actions.act_window,name:pedagogy_extra_activities.pedagogy_class_non_curricular_action
+#: model:ir.ui.menu,name:pedagogy_extra_activities.menu_classes_non_curricular
+msgid "Extra Activities"
+msgstr "Extra Curriculares"
+
+#. module: pedagogy_extra_activities
+#: view:pedagogy.class.type:0
+msgid "Group By..."
+msgstr "Agrupar Por..."
+
+#. module: pedagogy_extra_activities
+#: field:enrollments.grouped.by.year.class.type,total_enrollments:0
+msgid "Total enrollments"
+msgstr "Todas as Matrículas"
+
+#. module: pedagogy_extra_activities
+#: model:ir.model,name:pedagogy_extra_activities.model_enrollments_grouped_by_year_class_type
+msgid "Enrollments Grouped By Year and Class"
+msgstr "Matrículas Agrupadas por Ano e Turma"
+
+#. module: pedagogy_extra_activities
+#: model:ir.actions.act_window,help:pedagogy_extra_activities.pedagogy_class_non_curricular_action
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add an extra activity class.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Clique para adicionar uma turma extra curricular.\n"
+"              </p>\n"
+"            "
+
+#. module: pedagogy_extra_activities
+#: view:pedagogy.class:0
+msgid "Group"
+msgstr "Série"
+
+#. module: pedagogy_extra_activities
+#: view:pedagogy.class:0
+#: field:pedagogy.class,class_type_id:0
+#: view:pedagogy.class.type:0
+#: view:pedagogy.class.year:0
+#: field:pedagogy.class.year,class_type_id:0
+#: field:pedagogy.enrollments.report,type:0
+msgid "Class Type"
+msgstr "Tipo"
+
+#. module: pedagogy_extra_activities
+#: field:enrollments.grouped.by.year.class.type,type:0
+#: view:pedagogy.class:0
+#: view:pedagogy.enrollments.report:0
+msgid "Type"
+msgstr "Tipo"
+
+#. module: pedagogy_extra_activities
+#: help:pedagogy.class.year,class_type_id:0
+msgid "Class type."
+msgstr "Tipo da turma"
+
+#. module: pedagogy_extra_activities
+#: model:ir.actions.act_window,name:pedagogy_extra_activities.pedagogy_class_curricular_action
+#: model:ir.ui.menu,name:pedagogy_extra_activities.menu_classes_curricular
+msgid "Curricular Classes"
+msgstr "Turmas Curriculares"
+
+#. module: pedagogy_extra_activities
+#: field:enrollments.grouped.by.year.class.type,class_id:0
+msgid "Class"
+msgstr "Turma"
+
+#. module: pedagogy_extra_activities
+#: field:pedagogy.class.type,is_curricular:0
+msgid "Is Curricular?"
+msgstr "É Curricular?"
+
+#. module: pedagogy_extra_activities
+#: field:pedagogy.class.type,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: pedagogy_extra_activities
+#: model:ir.actions.act_window,name:pedagogy_extra_activities.pedagogy_class_type_action
+#: model:ir.ui.menu,name:pedagogy_extra_activities.menu_classes_types
+#: view:pedagogy.class.type:0
+msgid "Class Types"
+msgstr "Tipos de Turma"
+
+#. module: pedagogy_extra_activities
+#: model:ir.actions.act_window,name:pedagogy_extra_activities.enrollments_grouped_by_year_class_type_inherited_action
+msgid "Enrollments Grouped By Year Class Type"
+msgstr "Matrículas Agrupadas por Ano e Tipo de Turma"
+
+#. module: pedagogy_extra_activities
+#: model:ir.model,name:pedagogy_extra_activities.model_pedagogy_class_type
+msgid "pedagogy.class.type"
+msgstr "Tipos de Turma"
+
+#. module: pedagogy_extra_activities
+#: model:ir.model,name:pedagogy_extra_activities.model_pedagogy_enrollments_report
+msgid "Enrollments Report"
+msgstr "Relatório de Matrículas"
+
+#. module: pedagogy_extra_activities
+#: model:ir.model,name:pedagogy_extra_activities.model_pedagogy_class
+msgid "Pedagogy Classes"
+msgstr "Turmas"
+
+#. module: pedagogy_extra_activities
+#: model:ir.model,name:pedagogy_extra_activities.model_pedagogy_class_year
+msgid "Class/Year"
+msgstr "Turma/Ano"
+
+#. module: pedagogy_extra_activities
+#: view:pedagogy.class:0
+#: view:pedagogy.class.year:0
+msgid "Extra Activity"
+msgstr "Extra Curricular"
+
+#. module: pedagogy_extra_activities
+#: field:enrollments.grouped.by.year.class.type,year_id:0
+msgid "Year"
+msgstr "Ano"
+

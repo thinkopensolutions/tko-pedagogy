@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="pedagogy_content_area_form" model="ir.ui.view">
+            <field name="name">pedagogy_content_area_form</field>
+            <field name="model">pedagogy.content_area</field>
+            <field name="arch" type="xml">
+                <form string="Discipline Area" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pedagogy_content_area_action" model="ir.actions.act_window">
+            <field name="name">Content Areas</field>
+            <field name="res_model">pedagogy.content_area</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add content areas.
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+                id="menu_content_config"
+                name="Content"
+                parent="pedagogy_base.menu_pedagogy_config"
+                sequence="50"/>
+
+        <menuitem
+                id="menu_content_areas"
+                name="Discipline Areas"
+                action="pedagogy_content_area_action"
+                parent="menu_content_config"
+                sequence="10"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="pedagogy_topic_form" model="ir.ui.view">
+            <field name="name">pedagogy_topic_form</field>
+            <field name="model">pedagogy.topic</field>
+            <field name="arch" type="xml">
+                <form string="Pedagogy Content Topics" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="school_year_id"/>
+                            <field name="name"/>
+                            <field name="title"/>
+                            <field name="sequence"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pedagogy_topic_tree" model="ir.ui.view">
+            <field name="name">pedagogy_topic_tree</field>
+            <field name="model">pedagogy.topic</field>
+            <field name="arch" type="xml">
+                <tree string="Pedagogy Content Topics">
+                    <field name="school_year_id"/>
+                    <field name="name"/>
+                    <field name="title"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pedagogy_topic_search" model="ir.ui.view">
+            <field name="name">pedagogy_topic_search</field>
+            <field name="model">pedagogy.topic</field>
+            <field name="arch" type="xml">
+                <search string="Topic">
+                    <filter string="School Year" name="school_year_id" context="{'group_by': 'school_year_id'}"/>
+                    <field name="name"/>
+                    <field name="title"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="pedagogy_topic_action" model="ir.actions.act_window">
+            <field name="name">Topics</field>
+            <field name="res_model">pedagogy.topic</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a topic.
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+                id="menu_content"
+                name="Content"
+                parent="pedagogy_base.menu_pedagogy"
+                sequence="10"/>
+
+        <menuitem
+                id="menu_topics"
+                name="Topics"
+                action="pedagogy_topic_action"
+                parent="menu_content"
+                sequence="10"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="pedagogy_student_attendance_form" model="ir.ui.view">
+            <field name="name">pedagogy_student_attendance_form</field>
+            <field name="model">pedagogy.student.attendance</field>
+            <field name="arch" type="xml">
+                <form string="Student Attendance" version="7.0">
+                    <header>
+                        <button type="object" string="Justify" name="set_justified" states="unjustified"/>
+                        <button type="object" string="Present" name="set_present" states="unknown"/>
+                        <button type="object" string="Absent" name="set_unjustified" states="unknown"/>
+                        <field name="state"
+                               widget="statusbar"
+                               clickable="True"
+                               statusbar_visible="unknown,present,unjustified,justified,present"
+                               statusbar_colors='{"unknown":"blue","present":"gray","unjustified":"red"}'/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group col="4">
+                                <field name="time_table_id" colspan="4" on_change="onchange_time_table(time_table_id)"/>
+                                <field name="enrollment_id" colspan="4" on_change="onchange_enrollment(enrollment_id)"/>
+                                <field name="student_id" colspan="4" readonly="1"/>
+                                <field name="date_start" colspan="2"/>
+                                <field name="date_end" colspan="2"/>
+                            </group>
+                            <notebook colspan="4">
+                                <page string="History">
+                                    <separator string="History" colspan="4"/>
+                                    <field name="history_ids" colspan="4" nolabel="1">
+                                        <tree>
+                                            <field name="date"/>
+                                            <field name="user_id"/>
+                                            <field name="change"/>
+                                        </tree>
+                                        <form>
+                                            <field name="date" readonly="1"/>
+                                            <field name="user_id" readonly="1"/>
+                                            <field name="change" readonly="1"/>
+                                            <separator string="Justification" colspan="4"/>
+                                            <field name="justification" colspan="4" nolabel="1"
+                                                   attrs="{'readonly':[('change','!=','justified')]}"/>
+                                        </form>
+                                    </field>
+                                </page>
+                            </notebook>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pedagogy_student_attendance_tree" model="ir.ui.view">
+            <field name="name">pedagogy_student_attendance_tree</field>
+            <field name="model">pedagogy.student.attendance</field>
+            <field name="arch" type="xml">
+                <tree string="Student Attendance" colors="red:state=='unjustified';blue:state=='justified';">
+                    <field name="enrollment_id"/>
+                    <field name="student_id"/>
+                    <field name="class_year_id"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pedagogy_student_attendance_search" model="ir.ui.view">
+            <field name="name">pedagogy_student_attendance_search</field>
+            <field name="model">pedagogy.student.attendance</field>
+            <field name="arch" type="xml">
+                <search string="Attendances Search">
+                    <group expand="1" string="Filter By...">
+                        <filter string="Unknown" name="unknown" domain="[('state','=','unknown')]" icon="stock_log"/>
+                        <filter string="Present" name="present" domain="[('state','=','present')]" icon="gtk-apply"/>
+                        <filter string="Unjustified" name="unjustified" domain="[('state','=','unjustified')]"
+                                icon="gtk-cancel"/>
+                        <filter string="Justified" name="justified" domain="[('state','=','justified')]"
+                                icon="terp-emblem-important"/>
+                        <group string="School Year">
+                            <filter
+                                    string="Future Years"
+                                    name="future_years"
+                                    domain="[('time_table_id.class_discipline_teacher_id.class_year_id.year_id.this_year', '=', 'future')]"/>
+                            <filter
+                                    string="Next Year"
+                                    name="next_year"
+                                    domain="[('time_table_id.class_discipline_teacher_id.class_year_id.year_id.this_year', '=', 'next')]"/>
+                            <filter
+                                    string="This Year"
+                                    name="this_year"
+                                    domain="[('time_table_id.class_discipline_teacher_id.class_year_id.year_id.this_year', '=', 'this')]"/>
+                            <filter
+                                    string="Last Year"
+                                    name="last_year"
+                                    domain="[('time_table_id.class_discipline_teacher_id.class_year_id.year_id.this_year', '=', 'last')]"/>
+                            <filter
+                                    string="Old Years"
+                                    name="old_years"
+                                    domain="[('time_table_id.class_discipline_teacher_id.class_year_id.year_id.this_year', '=', 'old')]"/>
+                        </group>
+                        <field name="year_id" widget="selection"/>
+                        <field name="class_id"/>
+                        <field name="student_id"/>
+                        <field name="state"/>
+                    </group>
+                    <group expand="1" string="Group By...">
+                        <filter string="Student" name="student" context="{'group_by': 'student_id'}"/>
+                        <filter string="State" name="state" context="{'group_by': 'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="pedagogy_student_attendance_action" model="ir.actions.act_window">
+            <field name="name">Student Attendance</field>
+            <field name="res_model">pedagogy.student.attendance</field>
+            <field name="view_id" ref="pedagogy_student_attendance_tree"/>
+            <field name="search_view_id" ref="pedagogy_student_attendance_search"/>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_this_year':'this', 'search_default_unknown':1,
+                'search_default_unjustified':1}
+            </field>
+        </record>
+
+        <menuitem
+                id="menu_attendances"
+                name="Attendances"
+                action="pedagogy_student_attendance_action"
+                parent="pedagogy_base.menu_pedagogy"
+                sequence="8"/>
+
+    </data>
+</openerp>

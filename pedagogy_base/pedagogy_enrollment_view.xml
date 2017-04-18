@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="pedagogy_enrollment_form" model="ir.ui.view">
+            <field name="name">pedagogy_enrollment_form</field>
+            <field name="model">pedagogy.enrollment</field>
+            <field name="arch" type="xml">
+                <form string="Enrollment" version="7.0">
+                    <header>
+                        <div class="oe_edit_only">
+                            <button name="set_pre_enroll"
+                                    string="Pre Enroll"
+                                    class="oe_highlight"
+                                    help="Pre Enroll Student"
+                                    states="new"/>
+                            <button name="set_enroll"
+                                    string="Enroll"
+                                    class="oe_highlight"
+                                    help="Enroll Student"
+                                    states="new,pre_enrolled,suspended"/>
+                            <button name="set_suspend"
+                                    string="Suspend"
+                                    help="Suspend Enrollment"
+                                    states="enrolled"
+                                    groups="pedagogy_base.group_pedagogy_secretary_manager"/>
+                            <button name="set_renew"
+                                    string="Reset"
+                                    help="Reset Enrollment"
+                                    states="cancel"/>
+                            <button name="set_cancel"
+                                    string="Cancel"
+                                    help="Cancel Enrollment"
+                                    states="new,pre_enrolled,enrolled,suspended"/>
+                            <field name="state"
+                                   widget="statusbar"
+                                   clickable="False"
+                                   statusbar_visible="new,pre_enrolled,enrolled,suspended,canceled"
+                                   statusbar_colors='{"new":"blue","canceled":"gray","suspended":"red"}'/>
+                        </div>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="number" readonly="1"/>
+                            <field name="student_id" domain="[('is_student', '=', 1)]"/>
+                            <field name="class_year_id"/>
+                            <field name="observations"/>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="History">
+                                <field name="history_ids" colspan="4" nolabel="1" readonly="1">
+                                    <tree string="Enrollment History">
+                                        <field name="date"/>
+                                        <field name="user_id"/>
+                                        <field name="change"/>
+                                    </tree>
+                                    <form string="Enrollment History">
+                                        <field name="date"/>
+                                        <field name="user_id"/>
+                                        <field name="change"/>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="pedagogy_enrollment_tree" model="ir.ui.view">
+            <field name="name">pedagogy_enrollment_tree</field>
+            <field name="model">pedagogy.enrollment</field>
+            <field name="arch" type="xml">
+                <tree string="Enrollments" colors="blue:state=='new';gray:state=='canceled';red:state=='suspended';">
+                    <field name="number"/>
+                    <field name="student_id"/>
+                    <field name="class_year_id"/>
+                    <field name="state"/>
+                    <button name="set_pre_enroll"
+                            icon="terp-gtk-media-pause"
+                            string="Pre Enroll"
+                            help="Pre Enroll Student"
+                            states="new"/>
+                    <button name="set_enroll"
+                            icon="gtk-go-forward"
+                            string="Enroll"
+                            help="Enroll Student"
+                            states="new,pre_enrolled,suspended"/>
+                    <button name="set_suspend"
+                            icon="terp-emblem-important"
+                            string="Suspend"
+                            help="Suspend Enrollment"
+                            states="enrolled"
+                            groups="pedagogy_base.group_pedagogy_secretary_manager"/>
+                    <button name="set_cancel"
+                            icon="gtk-cancel"
+                            string="Cancel"
+                            help="Cancel Enrollment"
+                            states="new,pre_enrolled,enrolled,suspended"
+                            groups="pedagogy_base.group_pedagogy_secretary_manager"/>
+                    <button name="set_renew"
+                            icon="gtk-redo"
+                            string="Reset"
+                            help="Reset Enrollment"
+                            states="canceled" colspan="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pedagogy_enrollment_search" model="ir.ui.view">
+            <field name="name">pedagogy_enrollment_search</field>
+            <field name="model">pedagogy.enrollment</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Enrollments">
+                    <field name="number"/>
+                    <field name="class_year_id"/>
+                    <field name="student_id"/>
+                    <group string="State">
+                        <filter string="New"
+                                name="new"
+                                domain="[('state','=','new')]"/>
+                        <filter string="Pre-Inscripted"
+                                name="pre_inscripted"
+                                domain="[('state','=','pre_enrolled')]"/>
+                        <filter string="Inscripted"
+                                name="inscripted"
+                                domain="[('state','=','enrolled')]"/>
+                        <filter string="Suspended"
+                                name="suspended"
+                                domain="[('state','=','suspended')]"/>
+                        <filter string="Canceled"
+                                name="canceled"
+                                domain="[('state','=','canceled')]"/>
+                    </group>
+                    <group string="School Year">
+                        <filter
+                                string="Future Years"
+                                name="future_years"
+                                domain="[('class_year_id.year_id.this_year', '=', 'future')]"/>
+                        <filter
+                                string="Next Year"
+                                name="next_year"
+                                domain="[('class_year_id.year_id.this_year', '=', 'next')]"/>
+                        <filter
+                                string="This Year"
+                                name="this_year"
+                                domain="[('class_year_id.year_id.this_year', '=', 'this')]"/>
+                        <filter
+                                string="Last Year"
+                                name="last_year"
+                                domain="[('class_year_id.year_id.this_year', '=', 'last')]"/>
+                        <filter
+                                string="Old Years"
+                                name="old_years"
+                                domain="[('class_year_id.year_id.this_year', '=', 'old')]"/>
+                    </group>
+                    <group string="Group By...">
+                        <filter string="Student" name="student_id" context="{'group_by':'student_id'}"/>
+                        <filter string="Class Year" name="class_year_id" context="{'group_by':'class_year_id'}"/>
+                        <filter string="State" name="state" context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="pedagogy_enrollment_action" model="ir.actions.act_window">
+            <field name="name">Enrollments</field>
+            <field name="res_model">pedagogy.enrollment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="pedagogy_enrollment_search"/>
+            <field name="context">{"search_default_this_year": "this", "search_default_inscripted": 1}</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add an enrollment.
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+                id="menu_enrollments"
+                name="Enrollments"
+                action="pedagogy_enrollment_action"
+                parent="menu_secretary"/>
+
+    </data>
+</openerp>
