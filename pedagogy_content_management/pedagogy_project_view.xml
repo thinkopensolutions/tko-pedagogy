@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_task_form2_inherit" model="ir.ui.view">
+            <field name="name">view.task.form2.inherit</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field name="content_id" on_change="update_planned_hours(content_id)"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_task_tree2_inherit" model="ir.ui.view">
+            <field name="name">view.task.tree2.inherit</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_tree2"/>
+            <field name="arch" type="xml">
+                <field name="project_id" position="before">
+                    <field name="content_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_hierarchical_project" model="ir.ui.view">
+            <field name="name">project.project.tree</field>
+            <field name="model">project.project</field>
+            <field name="field_parent">project_children</field>
+            <field name="arch" type="xml">
+                <tree string="Projects">
+                    <field name="project_name" string="Project Name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_hierarchical_projects_tree" model="ir.actions.act_window">
+            <field name="name">Projects</field>
+            <field name="res_model">project.project</field>
+            <field name="view_id" ref="view_hierarchical_project"/>
+            <field name="domain">[('parent_id','=',False)]</field>
+        </record>
+
+        <record id="pedagogy_class_year_discipline_form" model="ir.ui.view">
+            <field name="name">pedagogy_class_year_discipline_form</field>
+            <field name="model">pedagogy.class.year.discipline</field>
+            <field name="arch" type="xml">
+                <form string="Project Class Discipline" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="project_id"/>
+                            <field name="class_year_id"/>
+                            <field name="discipline_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pedagogy_class_year_discipline_tree" model="ir.ui.view">
+            <field name="name">pedagogy_class_year_discipline_tree</field>
+            <field name="model">pedagogy.class.year.discipline</field>
+            <field name="arch" type="xml">
+                <tree string="Project Class Discipline">
+                    <field name="project_id"/>
+                    <field name="class_year_id"/>
+                    <field name="discipline_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pedagogy_class_year_discipline_search" model="ir.ui.view">
+            <field name="name">pedagogy_class_year_discipline_search</field>
+            <field name="model">pedagogy.class.year.discipline</field>
+            <field name="arch" type="xml">
+                <search string="Project Class Discipline">
+                    <field name="project_id"/>
+                    <field name="class_year_id"/>
+                    <field name="discipline_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="pedagogy_class_year_discipline_action" model="ir.actions.act_window">
+            <field name="name">Project Class Discipline</field>
+            <field name="res_model">pedagogy.class.year.discipline</field>
+            <field name="view_type">form</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="pedagogy_class_year_discipline_tree"/>
+            <field name="search_view_id" ref="pedagogy_class_year_discipline_search"/>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to associate a project with a class and discipline.
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+                id="menu_project_class_discipline"
+                name="Project/Class/Discipline"
+                action="pedagogy_class_year_discipline_action"
+                parent="project.menu_project_management"
+                sequence="3"/>
+
+    </data>
+</openerp>

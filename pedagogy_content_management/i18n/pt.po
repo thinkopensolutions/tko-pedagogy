@@ -1,0 +1,608 @@
+# This file contains the translation of the following modules:
+# 	* pedagogy_content_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-11 11:30+0000\n"
+"PO-Revision-Date: 2012-09-28 08:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pedagogy_content_management
+#: field:pedagogy.class.year.discipline,discipline:0 view:pedagogy.content:0
+#: field:pedagogy.content,discipline_content_area:0
+#: field:pedagogy.content,discipline_id:0
+#: field:pedagogy.time_table,discipline_id:0
+msgid "Discipline"
+msgstr "Disciplina"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content:0
+msgid "Topic and Group"
+msgstr "Tópico e Grupo"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content:0 field:pedagogy.content,group_id:0
+msgid "Group"
+msgstr "Grupo"
+
+#. module: pedagogy_content_management
+#: model:ir.model,name:pedagogy_content_management.model_pedagogy_group_area
+msgid "Pedagogy Group Areas"
+msgstr ""
+
+#. module: pedagogy_content_management
+#: model:ir.model,name:pedagogy_content_management.model_pedagogy_class_year_discipline
+msgid "pedagogy.class.year.discipline"
+msgstr ""
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content:0 field:pedagogy.content,content_area_id:0
+msgid "Area"
+msgstr "Área"
+
+#. module: pedagogy_content_management
+#: constraint:project.task:0
+msgid "Error ! Task end-date must be greater then task start-date"
+msgstr "Erro ! A data final deve ser maior do que a data inicial"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content.wizard:0
+msgid "Create"
+msgstr "Criar"
+
+#. module: pedagogy_content_management
+#: field:pedagogy.content,start_date:0
+msgid "start_date"
+msgstr ""
+
+#. module: pedagogy_content_management
+#: model:ir.ui.menu,name:pedagogy_content_management.menu_content_config
+#: view:pedagogy.content:0 field:pedagogy.content.link,content:0
+#: field:project.task,content_id:0
+msgid "Content"
+msgstr "Conteúdo"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content:0
+msgid "Group By..."
+msgstr "Agrupar por..."
+
+#. module: pedagogy_content_management
+#: field:project.project,project_children:0
+#: field:project.project,project_parent_id:0
+msgid "unknown"
+msgstr ""
+
+#. module: pedagogy_content_management
+#: field:pedagogy.activitie,date_from:0 field:pedagogy.time_table,date_from:0
+msgid "Date From"
+msgstr "Data Inicial"
+
+#. module: pedagogy_content_management
+#: field:pedagogy.content,topic_title:0 view:pedagogy.topic:0
+#: field:pedagogy.topic,title:0
+msgid "Topic Title"
+msgstr "Título do Tópico"
+
+#. module: pedagogy_content_management
+#: field:pedagogy.content,name:0
+msgid "Title"
+msgstr "Título"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content:0
+msgid "Last Year"
+msgstr "Ano Anterior"
+
+#. module: pedagogy_content_management
+#: field:pedagogy.content,school_year_id:0 view:pedagogy.topic:0
+#: field:pedagogy.topic,school_year_id:0
+msgid "School Year"
+msgstr "Ano Escolar"
+
+#. module: pedagogy_content_management
+#: model:ir.ui.menu,name:pedagogy_content_management.next_id_005
+msgid "Pedagogy"
+msgstr "Pedagogia"
+
+#. module: pedagogy_content_management
+#: constraint:project.project:0
+msgid "Error! project start-date must be lower then project end-date."
+msgstr "O início do projeto deve acontecer antes do seu fim."
+
+#. module: pedagogy_content_management
+#: help:pedagogy.content,discipline_content_area:0
+msgid ""
+"Read only field, this is the discipline and his content area concatenated."
+msgstr "Campo de consulta, representa a disciplina e o conteúdo concatenados."
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content:0
+msgid "Content Title"
+msgstr "Título do Conteúdo"
+
+#. module: pedagogy_content_management
+#: field:pedagogy.time_table,activitie_ids:0
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content:0 field:pedagogy.content.link,description:0
+#: field:pedagogy.topic,description:0
+msgid "Description"
+msgstr "Descrição"
+
+#. module: pedagogy_content_management
+#: model:ir.model,name:pedagogy_content_management.model_pedagogy_content_link
+msgid "pedagogy.content.link"
+msgstr ""
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content:0 field:pedagogy.content,general_skills:0
+msgid "General Skills"
+msgstr "Aptidões Gerais"
+
+#. module: pedagogy_content_management
+#: constraint:project.task:0
+msgid "Error ! You cannot create recursive tasks."
+msgstr "Não pode criar tarefas recursivas"
+
+#. module: pedagogy_content_management
+#: field:pedagogy.content,sequence:0 field:pedagogy.topic,sequence:0
+msgid "Sequence"
+msgstr "Sequência"
+
+#. module: pedagogy_content_management
+#: model:ir.actions.act_window,name:pedagogy_content_management.action_content_areas
+#: model:ir.ui.menu,name:pedagogy_content_management.menu_content_areas
+#: field:pedagogy.content_area,name:0
+msgid "Content Areas"
+msgstr "Áreas de Conteúdo"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content:0 field:pedagogy.content,planned_time:0
+msgid "Planned Time"
+msgstr "Tempo Planeado"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content.wizard:0
+msgid "Content Wizard"
+msgstr "Assistente de Criação de Tarefas"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content_area:0
+msgid "Pedagogy Content Area"
+msgstr "Área de Conteúdo"
+
+#. module: pedagogy_content_management
+#: help:pedagogy.activitie,date_from:0
+msgid "Read only field, start date."
+msgstr "Campo de consulta, data de início."
+
+#. module: pedagogy_content_management
+#: help:pedagogy.topic,name:0
+msgid ""
+"This is a short description of topic, or ususally the month reference (ex:. "
+"September)."
+msgstr ""
+"Descrição curta do tópico, ou em geral o mês de referência (ex:. Setembro)."
+
+#. module: pedagogy_content_management
+#: help:pedagogy.content,topic_title:0
+msgid ""
+"Read only field, this is the topic title.\n"
+"The vertical theme for all disciplines."
+msgstr ""
+"Campo de consulta, representa o título do tópico.\n"
+"O tema vertical para todas as disciplinas."
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content:0
+msgid "This Year"
+msgstr "Ano Atual"
+
+#. module: pedagogy_content_management
+#: field:pedagogy.content.link,date:0
+msgid "Date"
+msgstr "Data"
+
+#. module: pedagogy_content_management
+#: model:ir.model,name:pedagogy_content_management.model_pedagogy_content
+#: view:pedagogy.content:0
+msgid "Pedagogy Content"
+msgstr "Conteúdo"
+
+#. module: pedagogy_content_management
+#: field:pedagogy.time_table,teacher_id:0
+msgid "Teacher"
+msgstr "Professor"
+
+#. module: pedagogy_content_management
+#: model:ir.model,name:pedagogy_content_management.model_pedagogy_activitie
+msgid "Pedagogy Activities"
+msgstr "Actividades"
+
+#. module: pedagogy_content_management
+#: sql_constraint:pedagogy.class.year.discipline:0
+msgid "Must be unique!"
+msgstr "Deve ser único!"
+
+#. module: pedagogy_content_management
+#: field:pedagogy.activitie,name:0
+msgid "Activitie"
+msgstr "Actividade"
+
+#. module: pedagogy_content_management
+#: model:ir.model,name:pedagogy_content_management.model_project_task
+msgid "Task"
+msgstr "Tarefa"
+
+#. module: pedagogy_content_management
+#: model:ir.model,name:pedagogy_content_management.model_pedagogy_time_table
+msgid "Pedagogy Time Tables"
+msgstr "Horários"
+
+#. module: pedagogy_content_management
+#: field:pedagogy.class.year.discipline,name:0
+#: field:pedagogy.time_table,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: pedagogy_content_management
+#: field:pedagogy.class.year,project:0
+#: field:pedagogy.class.year.discipline,project:0
+#: field:pedagogy.discipline,project:0 field:pedagogy.group,project:0
+#: field:pedagogy.group.area,project:0 field:pedagogy.school.year,project:0
+msgid "related project"
+msgstr "Projeto relacionado"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content:0 field:pedagogy.content.link,url:0
+msgid "URL"
+msgstr "Endereço"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content_area:0
+msgid "Content Area"
+msgstr "Área de Conteúdo"
+
+#. module: pedagogy_content_management
+#: help:pedagogy.activitie,date_to:0
+msgid "Read only field, end date."
+msgstr "Campo de consulta, data de fim."
+
+#. module: pedagogy_content_management
+#: model:ir.model,name:pedagogy_content_management.model_pedagogy_content_wizard
+msgid "pedagogy.content.wizard"
+msgstr ""
+
+#. module: pedagogy_content_management
+#: view:pedagogy.topic:0
+msgid "Month Sequence"
+msgstr "Sequência do Mês"
+
+#. module: pedagogy_content_management
+#: field:pedagogy.activitie,date_to:0 field:pedagogy.time_table,date_to:0
+msgid "Date To"
+msgstr "Data Final"
+
+#. module: pedagogy_content_management
+#: constraint:pedagogy.class.year:0 constraint:pedagogy.group:0
+msgid "Invalid Dates"
+msgstr "Datas Inválidas"
+
+#. module: pedagogy_content_management
+#: help:pedagogy.content,topic_description:0
+msgid "Read only field, the content topic description."
+msgstr ""
+"Descreve o tópico ou objectivo do tema em regra para um mês.\n"
+"Esta orientação é vertical para todas as disciplinas\n"
+"  e grupos em definições de conteúdos"
+
+#. module: pedagogy_content_management
+#: field:pedagogy.activitie,time_table_id:0
+msgid "Time Table"
+msgstr "Horário"
+
+#. module: pedagogy_content_management
+#: help:pedagogy.topic,sequence:0
+msgid "Set the month sequence (1,2,...), to sort the topics in list."
+msgstr ""
+"Define a sequência do mês (1,2,...), para ordenar os tópicos em listas."
+
+#. module: pedagogy_content_management
+#: model:ir.model,name:pedagogy_content_management.model_pedagogy_school_year
+msgid "Pedagogy School Years"
+msgstr "Anos Escolares"
+
+#. module: pedagogy_content_management
+#: sql_constraint:pedagogy.class.year:0
+msgid "There can't be more than one record with the same class and year!"
+msgstr "Não pode exists mais que uma entrada com a mesma turma e ano!"
+
+#. module: pedagogy_content_management
+#: help:pedagogy.topic,description:0
+msgid ""
+"Describe the topic or theme objective usually for one month.\n"
+"This is the vertical orientation to all disciplines\n"
+"  and groups in content definition."
+msgstr ""
+"Descreve o tópico ou objectivo do tema em regra para um mês.\n"
+"Esta orientação é vertical para todas as disciplinas\n"
+"  e grupos em definições de conteúdos"
+
+#. module: pedagogy_content_management
+#: help:pedagogy.content_area,name:0
+msgid ""
+"Its a content sub-area of a discipline, like oral ou writen skill in "
+"literature."
+msgstr ""
+"Conteúdo da sub-área da disciplina, como por exemplo aptidão oral em "
+"literatura."
+
+#. module: pedagogy_content_management
+#: view:pedagogy.topic:0
+msgid "Pedagogy Content Topics"
+msgstr "Conteúdo dos Tópicos"
+
+#. module: pedagogy_content_management
+#: model:ir.model,name:pedagogy_content_management.model_pedagogy_class_year
+#: field:pedagogy.class.year.discipline,class_year:0
+msgid "Class/Year"
+msgstr "Turma/Ano"
+
+#. module: pedagogy_content_management
+#: model:ir.actions.act_window,name:pedagogy_content_management.action_hierarchical_projects_tree
+#: model:ir.ui.menu,name:pedagogy_content_management.menu_pedagogy_project
+#: view:project.project:0
+msgid "Projects"
+msgstr "Projetos"
+
+#. module: pedagogy_content_management
+#: model:ir.model,name:pedagogy_content_management.model_project_project
+msgid "Project"
+msgstr "Projeto"
+
+#. module: pedagogy_content_management
+#: help:pedagogy.topic,title:0
+msgid "This is a short description of topic."
+msgstr "Breve descrição do tópico."
+
+#. module: pedagogy_content_management
+#: model:ir.ui.menu,name:pedagogy_content_management.menu_pedagogy_task
+#: view:pedagogy.content:0 field:pedagogy.content,task_ids:0
+msgid "Tasks"
+msgstr "Tarefas"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content:0 field:pedagogy.content,links:0
+msgid "Links"
+msgstr ""
+
+#. module: pedagogy_content_management
+#: model:ir.actions.act_window,name:pedagogy_content_management.content_wizard_act_window
+#: model:ir.actions.act_window,name:pedagogy_content_management.content_in_content_wizard_act_window
+msgid "Create Tasks"
+msgstr "Criar Tarefas"
+
+#. module: pedagogy_content_management
+#: help:pedagogy.time_table,name:0
+msgid "Read only field, time table entry name."
+msgstr "Campo de consulta, nome da entrada do horário."
+
+#. module: pedagogy_content_management
+#: model:ir.model,name:pedagogy_content_management.model_pedagogy_group
+msgid "Pedagogy Groups"
+msgstr "Grupos Pedagógicos"
+
+#. module: pedagogy_content_management
+#: model:ir.actions.act_window,name:pedagogy_content_management.action_topics
+#: model:ir.ui.menu,name:pedagogy_content_management.menu_topics
+msgid "Topics"
+msgstr "Tópicos"
+
+#. module: pedagogy_content_management
+#: model:ir.model,name:pedagogy_content_management.model_pedagogy_discipline
+msgid "Pedagogy Disciplines"
+msgstr "Disciplinas"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content:0
+msgid "Number"
+msgstr "Sequência"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.topic:0 field:pedagogy.topic,name:0
+msgid "Month"
+msgstr "Mês"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content:0 field:pedagogy.content,topic_id:0
+#: view:pedagogy.topic:0
+msgid "Topic"
+msgstr "Tópico"
+
+#. module: pedagogy_content_management
+#: field:project.project,project_name:0
+#: view:project.project:0
+msgid "Project Name"
+msgstr "Nome do Projeto"
+
+#. module: pedagogy_content_management
+#: field:pedagogy.content.link,user:0
+msgid "User"
+msgstr "Utilizador"
+
+#. module: pedagogy_content_management
+#: model:ir.model,name:pedagogy_content_management.model_pedagogy_topic
+msgid "Pedagogy Content Topic"
+msgstr "Conteúdo do Tópico"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content:0
+msgid "Content Skills and Evaluations"
+msgstr "Aptidões e Avaliações"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content.wizard:0
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.content:0 field:pedagogy.content,specific_skills:0
+msgid "Specific Skills"
+msgstr "Aptidões Específicas"
+
+#. module: pedagogy_content_management
+#: field:pedagogy.content,topic_description:0
+msgid "Topic Description"
+msgstr "Descrição do tópico"
+
+#. module: pedagogy_content_management
+#: model:ir.model,name:pedagogy_content_management.model_pedagogy_content_area
+msgid "Pedagogy Content Areas"
+msgstr "Áreas de conteúdo"
+
+#. module: pedagogy_content_management
+#: model:ir.actions.act_window,name:pedagogy_content_management.action_contents
+#: model:ir.ui.menu,name:pedagogy_content_management.menu_contents
+msgid "Contents"
+msgstr "Conteúdos"
+
+#. module: pedagogy_content_management
+#: view:pedagogy.initial_wizard.topic:0
+msgid "If you select the box below, this Wizard will create Topics and Contents for the new School Year by copying the old ones."
+msgstr "Se clicar na caixa em baixo, este Assistente criará Tópicos e Conteúdos para o novo Ano Escolar, copiados do ano anterior."
+
+#. module: pedagogy_content_management
+#: field:pedagogy.initial_wizard.topic,create_topics:0
+msgid "Create topics and contents?"
+msgstr "Criar tópicos e conteúdos?"
+
+#. modules: pedagogy_content_management
+#: view:pedagogy.initial_wizard.topic:0
+msgid "Next"
+msgstr "Seguinte"
+
+#. modules: pedagogy_content_management
+#: view:pedagogy.initial_wizard.topic:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. modules: pedagogy_content_management
+#: view:pedagogy.initial_wizard.topic:0
+msgid "Cancel Assistant?"
+msgstr "Cancelar Assistente?"
+
+#~ msgid "Classes Time Table"
+#~ msgstr "Horários de Aulas"
+
+#~ msgid "Read only field, the content topic title."
+#~ msgstr "Campo de consulta, representa o título do tópico."
+
+#~ msgid "Teachers Partners"
+#~ msgstr "Professores"
+
+#~ msgid "The discipline name (ex:. Matemathic, Geography)."
+#~ msgstr "O nome da disciplina (ex:. Matemática, Geografia)."
+
+#~ msgid ""
+#~ "This is the organization of common disciplines in groups, or by "
+#~ "category.\n"
+#~ "(ex:. Compulsory or not, Maths, Literature or Social ones)"
+#~ msgstr ""
+#~ "Organização de disciplinas comuns em grupos ou categorias.\n"
+#~ "(ex:. Obrigatória ou não, Matemática, Literatura ou Estudos Sociais)"
+
+#~ msgid "Discipline Code"
+#~ msgstr "Código de Disciplina"
+
+#~ msgid "Pedagogy Discipline Areas"
+#~ msgstr "Areas de Disciplina"
+
+#~ msgid "Set the discipline sort sequence (10,20,...). To sort in lists."
+#~ msgstr ""
+#~ "Define a sequência da disciplina (10,20,...). Para ordenar em listas."
+
+#~ msgid "Discipline Name"
+#~ msgstr "Nome da Disciplina"
+
+#~ msgid "Discipline Area"
+#~ msgstr "Área da Disciplina"
+
+#~ msgid "Discipline Area Name"
+#~ msgstr "Nome da Área da Disciplina"
+
+#~ msgid "Read only field, the content general skills."
+#~ msgstr "Campo de consulta, aptidões gerais."
+
+#~ msgid "Teachers Time Tables"
+#~ msgstr "Horários de Professores"
+
+#~ msgid "Is Teacher"
+#~ msgstr "É Professor"
+
+#~ msgid "Evaluations"
+#~ msgstr "Avaliações"
+
+#~ msgid "Class"
+#~ msgstr "Turma"
+
+#~ msgid "Check this if the user is a teacher."
+#~ msgstr "Selecione se o utilizador é professor."
+
+#~ msgid "Disciplines Time Tables"
+#~ msgstr "Horários de Disciplinas"
+
+#~ msgid "Discipline Areas"
+#~ msgstr "Áreas de Disciplinas"
+
+#~ msgid "Read only field, the content specific skills."
+#~ msgstr "Campo de leitura, aptidão especifica."
+
+#~ msgid "Contact"
+#~ msgstr "Contato"
+
+#~ msgid "Teachers"
+#~ msgstr "Professores"
+
+#~ msgid "Teacher Discipline"
+#~ msgstr "Disciplina do Professor"
+
+#~ msgid "Teachers Time Table"
+#~ msgstr "Horários dos Professores"
+
+#~ msgid "Content Discipline"
+#~ msgstr "Conteúdo da Disciplina"
+
+#~ msgid "Disciplines"
+#~ msgstr "Disciplinas"
+
+#~ msgid "Read only field, the content evaluations."
+#~ msgstr "Campo de consulta, conteúdo das avaliações."
+
+#~ msgid "Classes Time Tables"
+#~ msgstr "Horários de Aulas"
+
+#~ msgid "Is a Teacher?"
+#~ msgstr "É Professor?"
+
+#~ msgid "Disciplines Time Table"
+#~ msgstr "Horários das Disciplinas"
+
+#~ msgid "Partner"
+#~ msgstr "Parceiro"
+
+#~ msgid "The discipline code (ex:. MAT, GEO)."
+#~ msgstr "O código da disciplina (ex:. MAT, GEO)."
+
+#~ msgid "Salesman"
+#~ msgstr "Utilizador"

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="pedagogy_content_sequence_type" model="ir.sequence.type">
+            <field name="name">Pedagogy Content</field>
+            <field name="code">pedagogy.content.sequence</field>
+        </record>
+
+        <record id="pedagogy_content_sequence" model="ir.sequence">
+            <field name="name">Pedagogy Content Sequence</field>
+            <field name="code">pedagogy.content.sequence</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+        </record>
+
+    </data>
+</openerp>

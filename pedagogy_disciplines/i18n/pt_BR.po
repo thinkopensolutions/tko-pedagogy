@@ -1,0 +1,273 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* pedagogy_disciplines
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-28 21:35+0000\n"
+"PO-Revision-Date: 2013-05-28 21:35+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pedagogy_disciplines
+#: view:pedagogy.class.discipline.teacher:0
+#: field:pedagogy.class.discipline.teacher,discipline_id:0
+#: view:pedagogy.discipline:0
+#: view:pedagogy.discipline_area:0
+msgid "Discipline"
+msgstr "Disciplina"
+
+#. module: pedagogy_disciplines
+#: code:addons/pedagogy_disciplines/pedagogy_class_discipline_teacher.py:50
+#: code:addons/pedagogy_disciplines/pedagogy_class_discipline_teacher.py:62
+#, python-format
+msgid "Invalid Date!"
+msgstr "Data Inválida!"
+
+#. module: pedagogy_disciplines
+#: sql_constraint:pedagogy.class.discipline.teacher:0
+msgid "This teacher already teaches this discipline to this class year!"
+msgstr "Este professor já leciona esta disciplina a esta turma neste ano!"
+
+#. module: pedagogy_disciplines
+#: code:addons/pedagogy_disciplines/pedagogy_class_discipline_teacher.py:72
+#, python-format
+msgid "The dates are wrong: start date before end or must be in the selected class School Year!"
+msgstr "As datas estão erradas: a data de início tem de estar dentro da do ano escolar!"
+
+#. module: pedagogy_disciplines
+#: field:hr.employee,class_discipline_teacher_ids:0
+msgid "Class/Discipline"
+msgstr "Disciplina/Turma"
+
+#. module: pedagogy_disciplines
+#: field:pedagogy.class.discipline.teacher,discipline_area_id:0
+#: view:pedagogy.discipline:0
+msgid "Area"
+msgstr "Área Disciplinar"
+
+#. module: pedagogy_disciplines
+#: code:addons/pedagogy_disciplines/pedagogy_discipline.py:51
+#, python-format
+msgid "Illegal"
+msgstr "Ilegal"
+
+#. module: pedagogy_disciplines
+#: view:pedagogy.class.discipline.teacher:0
+msgid "End Date"
+msgstr "Data Final"
+
+#. module: pedagogy_disciplines
+#: view:pedagogy.class.discipline.teacher:0
+msgid "Future Years"
+msgstr "Anso Futuros"
+
+#. module: pedagogy_disciplines
+#: help:pedagogy.discipline,name:0
+msgid "The discipline name (ex:. Matemathic, Geography)."
+msgstr "O nome da disciplina (ex:. Matemática, Geografia)."
+
+#. module: pedagogy_disciplines
+#: model:ir.model,name:pedagogy_disciplines.model_hr_job
+msgid "Job Description"
+msgstr "Descrição da função"
+
+#. module: pedagogy_disciplines
+#: view:pedagogy.class.discipline.teacher:0
+#: view:pedagogy.discipline:0
+msgid "Group By..."
+msgstr "Agrupar Por..."
+
+#. module: pedagogy_disciplines
+#: field:pedagogy.discipline,code:0
+msgid "Discipline Code"
+msgstr "Código"
+
+#. module: pedagogy_disciplines
+#: model:ir.model,name:pedagogy_disciplines.model_pedagogy_class_discipline_teacher
+msgid "pedagogy.class.discipline.teacher"
+msgstr "Turma/Disciplina/Professor"
+
+#. module: pedagogy_disciplines
+#: field:pedagogy.class.discipline.teacher,observations:0
+msgid "Observations"
+msgstr "Observações"
+
+#. module: pedagogy_disciplines
+#: model:ir.model,name:pedagogy_disciplines.model_hr_employee
+msgid "Employee"
+msgstr "Funcionário"
+
+#. module: pedagogy_disciplines
+#: view:pedagogy.class.discipline.teacher:0
+msgid "Last Year"
+msgstr "Ano Passado"
+
+#. module: pedagogy_disciplines
+#: view:pedagogy.class.discipline.teacher:0
+msgid "School Year"
+msgstr "Ano Escolar"
+
+#. module: pedagogy_disciplines
+#: view:pedagogy.class.discipline.teacher:0
+#: field:pedagogy.class.discipline.teacher,date_start:0
+msgid "Start date"
+msgstr "Data Inicial"
+
+#. module: pedagogy_disciplines
+#: view:pedagogy.class.discipline.teacher:0
+msgid "Old Years"
+msgstr "Anos Antigos"
+
+#. module: pedagogy_disciplines
+#: model:ir.ui.menu,name:pedagogy_disciplines.menu_teacher
+#: view:pedagogy.class.discipline.teacher:0
+msgid "Disciplines Teachers"
+msgstr "Prof/Disc/Turma"
+
+#. module: pedagogy_disciplines
+#: field:pedagogy.discipline,name:0
+msgid "Discipline Name"
+msgstr "Nome"
+
+#. module: pedagogy_disciplines
+#: field:pedagogy.discipline,owner:0
+msgid "unknown"
+msgstr "desconhecido"
+
+#. module: pedagogy_disciplines
+#: field:pedagogy.discipline,discipline_area_id:0
+#: view:pedagogy.discipline_area:0
+msgid "Discipline Area"
+msgstr "Área Disciplinar"
+
+#. module: pedagogy_disciplines
+#: help:pedagogy.discipline,sequence:0
+msgid "Set the discipline sort sequence (10,20,...). To sort in lists."
+msgstr "Defina a sequência de ordenação da disciplina (10,20,...). Para ordenar em listas."
+
+#. module: pedagogy_disciplines
+#: model:ir.actions.act_window,name:pedagogy_disciplines.pedagogy_class_discipline_teacher_action
+#: view:pedagogy.class.discipline.teacher:0
+msgid "Discipline Teacher"
+msgstr "Professor/Disciplina"
+
+#. module: pedagogy_disciplines
+#: view:pedagogy.class.discipline.teacher:0
+msgid "This Year"
+msgstr "Ano Atual"
+
+#. module: pedagogy_disciplines
+#: field:hr.employee,is_teacher:0
+#: model:hr.job,name:pedagogy_disciplines.teacher_job
+#: view:pedagogy.class.discipline.teacher:0
+#: field:pedagogy.class.discipline.teacher,teacher_id:0
+msgid "Teacher"
+msgstr "Professor"
+
+#. module: pedagogy_disciplines
+#: view:pedagogy.class.discipline.teacher:0
+msgid "Class Year"
+msgstr "Turma Ano"
+
+#. module: pedagogy_disciplines
+#: field:pedagogy.class.discipline.teacher,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: pedagogy_disciplines
+#: code:addons/pedagogy_disciplines/pedagogy_discipline.py:51
+#, python-format
+msgid "You can't write to the following disciplines: "
+msgstr "Você não consegue modificar estas disciplinas: "
+
+#. module: pedagogy_disciplines
+#: model:ir.actions.act_window,name:pedagogy_disciplines.action_discipline_areas
+#: model:ir.ui.menu,name:pedagogy_disciplines.menu_discipline_areas
+#: field:pedagogy.discipline_area,name:0
+msgid "Discipline Areas"
+msgstr "Áreas Disciplinares"
+
+#. module: pedagogy_disciplines
+#: constraint:pedagogy.class.discipline.teacher:0
+msgid "Invalid Dates"
+msgstr "Datas Inválidas"
+
+#. module: pedagogy_disciplines
+#: help:pedagogy.discipline,code:0
+msgid "The discipline code (ex:. MAT, GEO)."
+msgstr "Código de Disciplina (ex:. MAT, GEO)."
+
+#. module: pedagogy_disciplines
+#: code:addons/pedagogy_disciplines/pedagogy_class_discipline_teacher.py:72
+#, python-format
+msgid "Error"
+msgstr "Erro"
+
+#. module: pedagogy_disciplines
+#: view:pedagogy.class.discipline.teacher:0
+msgid "Next Year"
+msgstr "Próximo Ano"
+
+#. module: pedagogy_disciplines
+#: model:ir.model,name:pedagogy_disciplines.model_pedagogy_class_year
+#: field:pedagogy.class.discipline.teacher,class_year_id:0
+msgid "Class/Year"
+msgstr "Turma/Ano"
+
+#. module: pedagogy_disciplines
+#: code:addons/pedagogy_disciplines/pedagogy_class_discipline_teacher.py:50
+#: code:addons/pedagogy_disciplines/pedagogy_class_discipline_teacher.py:62
+#, python-format
+msgid "The date must be inserted in range of the school year."
+msgstr "As datas têm de estar dentro do ano escolar."
+
+#. module: pedagogy_disciplines
+#: field:pedagogy.class.discipline.teacher,date_end:0
+msgid "End date"
+msgstr "Data Final"
+
+#. module: pedagogy_disciplines
+#: model:ir.actions.act_window,name:pedagogy_disciplines.pedagogy_discipline_action
+#: model:ir.ui.menu,name:pedagogy_disciplines.menu_disciplines
+#: model:ir.ui.menu,name:pedagogy_disciplines.menu_disciplines_config
+#: view:pedagogy.discipline:0
+#: view:pedagogy.discipline_area:0
+#: field:pedagogy.discipline_area,discipline_ids:0
+msgid "Disciplines"
+msgstr "Disciplinas"
+
+#. module: pedagogy_disciplines
+#: field:pedagogy.discipline,sequence:0
+msgid "Sequence"
+msgstr "Sequência"
+
+#. module: pedagogy_disciplines
+#: model:ir.model,name:pedagogy_disciplines.model_pedagogy_discipline
+msgid "Pedagogy Disciplines"
+msgstr "Disciplinas"
+
+#. module: pedagogy_disciplines
+#: field:pedagogy.class.year,class_discipline_teacher_ids:0
+#: field:pedagogy.discipline,class_discipline_teacher_ids:0
+msgid "CDTs"
+msgstr "CDTs"
+
+#. module: pedagogy_disciplines
+#: model:ir.model,name:pedagogy_disciplines.model_pedagogy_discipline_area
+msgid "Pedagogy Discipline Areas"
+msgstr "Áreas Disciplinares"
+
+#. module: pedagogy_disciplines
+#: help:pedagogy.discipline_area,name:0
+msgid "This is the organization of common disciplines in groups, or by category.\n"
+"(ex:. Compulsory or not, Maths, Literature or Social ones)"
+msgstr "Organização de disciplinas comuns em grupos, ou categorias.\n"
+"(ex:. Obrigatória ou não, Matemáticas, Literatura, Estudos Sociais)"
+

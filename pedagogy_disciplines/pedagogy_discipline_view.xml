@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="pedagogy_discipline_form" model="ir.ui.view">
+            <field name="name">pedagogy_discipline_form</field>
+            <field name="model">pedagogy.discipline</field>
+            <field name="arch" type="xml">
+                <form string="Discipline" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="owner" invisible="1"/>
+                            <field name="name" attrs="{'readonly': [('owner','=',False)]}"/>
+                            <field name="code" attrs="{'readonly': [('owner','=',False)]}"/>
+                            <field name="discipline_area_id" attrs="{'readonly': [('owner','=',False)]}"/>
+                            <field name="sequence" attrs="{'readonly': [('owner','=',False)]}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pedagogy_discipline_tree" model="ir.ui.view">
+            <field name="name">pedagogy_discipline_tree</field>
+            <field name="model">pedagogy.discipline</field>
+            <field name="arch" type="xml">
+                <tree string="Disciplines">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="discipline_area_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pedagogy_discipline_search" model="ir.ui.view">
+            <field name="name">pedagogy_discipline_search</field>
+            <field name="model">pedagogy.discipline</field>
+            <field name="arch" type="xml">
+                <search string="Disciplines">
+                    <field name="name"/>
+                    <group string="Group By...">
+                        <filter string="Area" name="discipline_area_id" context="{'group_by': 'discipline_area_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="pedagogy_discipline_action" model="ir.actions.act_window">
+            <field name="name">Disciplines</field>
+            <field name="res_model">pedagogy.discipline</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+
+        <menuitem
+                id="menu_disciplines_config"
+                name="Disciplines"
+                parent="pedagogy_base.menu_pedagogy_config"
+                sequence="40"/>
+
+        <menuitem
+                id="menu_disciplines"
+                name="Disciplines"
+                action="pedagogy_discipline_action"
+                parent="menu_disciplines_config"
+                sequence="20"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,337 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* pedagogy_time_table
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-29 01:08+0000\n"
+"PO-Revision-Date: 2013-05-29 01:08+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.time_table,discipline_id:0
+#: field:pedagogy.week.time.table,discipline_id:0
+msgid "Discipline"
+msgstr "Disciplina"
+
+#. module: pedagogy_time_table
+#: view:pedagogy.week.time.table:0
+msgid "Pedagogy Week Time Tables"
+msgstr "Horários Semanais"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.non.lective.days,date_end:0
+#: field:pedagogy.week.time.table,hour_end:0
+msgid "End"
+msgstr "Fim"
+
+#. module: pedagogy_time_table
+#: model:ir.actions.act_window,name:pedagogy_time_table.pedagogy_time_table_classes_action
+msgid "Classes Time Table"
+msgstr "Horários"
+
+#. module: pedagogy_time_table
+#: model:ir.model,name:pedagogy_time_table.model_project_task_work
+msgid "Project Task Work"
+msgstr "Trabalho da Tarefa do Projeto"
+
+#. module: pedagogy_time_table
+#: selection:pedagogy.week.time.table,week_day:0
+msgid "Thursday"
+msgstr "Quinta-feira"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.non.lective.days,date_start:0
+#: field:pedagogy.week.time.table,hour_start:0
+msgid "Start"
+msgstr "Início"
+
+#. module: pedagogy_time_table
+#: selection:pedagogy.week.time.table,week_day:0
+msgid "Sunday"
+msgstr "Domingo"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.activity,date_from:0
+#: field:pedagogy.time_table,date_from:0
+msgid "Date From"
+msgstr "De"
+
+#. module: pedagogy_time_table
+#: model:ir.actions.act_window,name:pedagogy_time_table.pedagogy_non_lective_days_action
+#: view:pedagogy.non.lective.days:0
+msgid "Non Lective Days"
+msgstr "Dias Não Lectivos"
+
+#. module: pedagogy_time_table
+#: model:ir.model,name:pedagogy_time_table.model_pedagogy_time_table
+#: view:pedagogy.time_table:0
+msgid "Pedagogy Time Tables"
+msgstr "Horários"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.non.lective.days,school_year_id:0
+msgid "School Year"
+msgstr "Ano Escolar"
+
+#. module: pedagogy_time_table
+#: help:pedagogy.activity,date_to:0
+msgid "Read only field, end date."
+msgstr "Data Final (só leitura)"
+
+#. module: pedagogy_time_table
+#: view:pedagogy.time_table:0
+msgid "For changing to done state"
+msgstr "para alterar para estado feito"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.non.lective.days,name:0
+#: field:pedagogy.time_table,name:0
+#: field:pedagogy.week.time.table,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.time_table,activity_ids:0
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.activity,time_table_id:0
+#: field:project.task,time_table_id:0
+#: field:project.task.work,time_table_id:0
+msgid "Time Table"
+msgstr "Horário"
+
+#. module: pedagogy_time_table
+#: selection:pedagogy.week.time.table,week_day:0
+msgid "Monday"
+msgstr "Segunda-feira"
+
+#. module: pedagogy_time_table
+#: model:ir.ui.menu,name:pedagogy_time_table.menu_pedagogy_non_lective_days
+msgid "Non Lective Days "
+msgstr "Dias Não Lectivos"
+
+#. module: pedagogy_time_table
+#: selection:pedagogy.week.time.table,week_day:0
+msgid "Friday"
+msgstr "Sexta-feira"
+
+#. module: pedagogy_time_table
+#: view:pedagogy.time_table:0
+msgid "Time Table Search"
+msgstr "Pesquisa de Horários"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.time_table,timesheet_ids:0
+msgid "Timesheet"
+msgstr "Horário"
+
+#. module: pedagogy_time_table
+#: view:pedagogy.week.time.table:0
+msgid "Week Time Table Search"
+msgstr "Pesquisa de Horário Semana"
+
+#. module: pedagogy_time_table
+#: help:pedagogy.activity,date_from:0
+msgid "Read only field, start date."
+msgstr "Data Final (só leitura)"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.week.time.table,class_discipline_teacher_id:0
+msgid "Class/Discipline/Teacher"
+msgstr "Class/Discipline/Teacher"
+
+#. module: pedagogy_time_table
+#: model:ir.ui.menu,name:pedagogy_time_table.menu_time_table
+#: model:ir.ui.menu,name:pedagogy_time_table.menu_week_time_table_config
+msgid "Time Tables"
+msgstr "Horários"
+
+#. module: pedagogy_time_table
+#: model:ir.ui.menu,name:pedagogy_time_table.menu_time_table_teachers
+msgid "Teachers Time Tables"
+msgstr "Horários por Professores"
+
+#. module: pedagogy_time_table
+#: view:pedagogy.time_table:0
+msgid "Tasks Execution"
+msgstr "Execução das Tarefas"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.time_table,class_discipline_teacher_id:0
+#: field:pedagogy.time_table,class_year_id:0
+#: field:pedagogy.week.time.table,class_year_id:0
+msgid "Class"
+msgstr "Turma"
+
+#. module: pedagogy_time_table
+#: model:ir.model,name:pedagogy_time_table.model_pedagogy_activity
+msgid "Pedagogy Activities"
+msgstr "Actividades"
+
+#. module: pedagogy_time_table
+#: model:ir.model,name:pedagogy_time_table.model_pedagogy_non_lective_days
+msgid "Pedagogy Non Lective Days"
+msgstr "Dias Não Lectivos"
+
+#. module: pedagogy_time_table
+#: view:pedagogy.non.lective.days:0
+msgid "Task edition"
+msgstr "Editar a Tarefa"
+
+#. module: pedagogy_time_table
+#: model:ir.ui.menu,name:pedagogy_time_table.menu_week_time_table
+msgid "Week Time Tables"
+msgstr "Horário Semanal"
+
+#. module: pedagogy_time_table
+#: model:ir.model,name:pedagogy_time_table.model_project_task
+msgid "Task"
+msgstr "Tarefa"
+
+#. module: pedagogy_time_table
+#: model:ir.ui.menu,name:pedagogy_time_table.menu_time_table_disciplines
+msgid "Disciplines Time Tables"
+msgstr "Horários por Disciplinas"
+
+#. module: pedagogy_time_table
+#: model:ir.actions.act_window,name:pedagogy_time_table.pedagogy_time_table_disciplines_action
+msgid "Disciplines Time Table"
+msgstr "Horários por Disciplinas"
+
+#. module: pedagogy_time_table
+#: model:ir.actions.act_window,name:pedagogy_time_table.action_week_time_tables
+msgid "Week Time Table"
+msgstr "Horário Semanal"
+
+#. module: pedagogy_time_table
+#: view:pedagogy.week.time.table:0
+msgid "Class and Discipline"
+msgstr "Turma e Disciplina"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.time_table,teacher_id:0
+#: field:pedagogy.week.time.table,teacher_id:0
+msgid "Teacher"
+msgstr "Professor"
+
+#. module: pedagogy_time_table
+#: selection:pedagogy.week.time.table,week_day:0
+msgid "Wednesday"
+msgstr "Quarta-feira"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.activity,date_to:0
+#: field:pedagogy.time_table,date_to:0
+msgid "Date To"
+msgstr "Até"
+
+#. module: pedagogy_time_table
+#: view:pedagogy.time_table:0
+msgid "Start Task"
+msgstr "Iniciar Tarefa"
+
+#. module: pedagogy_time_table
+#: model:ir.actions.act_window,name:pedagogy_time_table.pedagogy_time_table_teachers_action
+msgid "Teachers Time Table"
+msgstr "Horários por Professor"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.week.time.table,week_day:0
+msgid "Weekday"
+msgstr "Dia da Semana"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.activity,name:0
+msgid "Activity"
+msgstr "Atividade"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.non.lective.days,group_area_id:0
+msgid "Group Area"
+msgstr "Nível"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.time_table,project_id:0
+msgid "Project"
+msgstr "Projeto"
+
+#. module: pedagogy_time_table
+#: view:pedagogy.time_table:0
+#: field:pedagogy.time_table,task_ids:0
+msgid "Tasks"
+msgstr "Tarefas"
+
+#. module: pedagogy_time_table
+#: view:pedagogy.time_table:0
+msgid "Timesheets"
+msgstr "Resumo do Trabalho"
+
+#. module: pedagogy_time_table
+#: model:ir.model,name:pedagogy_time_table.model_pedagogy_week_time_table
+msgid "Pedagogy Week Time Table"
+msgstr "Horários Semanais"
+
+#. module: pedagogy_time_table
+#: selection:pedagogy.week.time.table,week_day:0
+msgid "Tuesday"
+msgstr "Terça-feira"
+
+#. module: pedagogy_time_table
+#: help:pedagogy.time_table,name:0
+msgid "Read only field, time table entry name."
+msgstr "Campo de consulta, nome da entrada do horário."
+
+#. module: pedagogy_time_table
+#: view:pedagogy.time_table:0
+msgid "Planning Tasks"
+msgstr "Planeamento de Tarefas"
+
+#. module: pedagogy_time_table
+#: model:ir.ui.menu,name:pedagogy_time_table.menu_time_table_classes
+msgid "Classes Time Tables"
+msgstr "Horários"
+
+#. module: pedagogy_time_table
+#: view:pedagogy.time_table:0
+msgid "Done"
+msgstr "Feito"
+
+#. module: pedagogy_time_table
+#: view:pedagogy.time_table:0
+msgid "For changing to open state"
+msgstr "Para modificar o estado aberto"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.time_table,owner:0
+#: field:pedagogy.week.time.table,date_end:0
+#: field:pedagogy.week.time.table,date_start:0
+#: field:project.task.work,available_tasks:0
+msgid "unknown"
+msgstr "desconhecido"
+
+#. module: pedagogy_time_table
+#: field:pedagogy.week.time.table,duration:0
+msgid "Duration"
+msgstr "Duração"
+
+#. module: pedagogy_time_table
+#: selection:pedagogy.week.time.table,week_day:0
+msgid "Saturday"
+msgstr "Sábado"
+
+#. module: pedagogy_time_table
+#: view:pedagogy.non.lective.days:0
+#: field:pedagogy.non.lective.days,observations:0
+msgid "Observations"
+msgstr "Observações"
+

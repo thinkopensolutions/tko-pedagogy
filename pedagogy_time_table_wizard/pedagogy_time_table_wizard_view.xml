@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- action -->
+        <record id="action_pedagogy_time_table_wizard" model="ir.actions.act_window">
+            <field name="name">pedagogy_time_table_wizard</field>
+            <field name="res_model">pedagogy_time_table_wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form,calendar</field>
+            <field name="domain">[]</field>
+        </record>
+
+        <!-- menu -->
+        <menuitem
+                id="menu_pedagogy_time_table_wizard"
+                name="pedagogy_time_table_wizard"
+                sequence="10"/>
+
+        <!-- submenus -->
+        <menuitem
+                id="menu_pedagogy_time_table_wizard_sub"
+                name="Sub-menu"
+                parent="menu_pedagogy_time_table_wizard"/>
+
+        <menuitem
+                name="pedagogy_time_table_wizard"
+                id="menu_pedagogy_time_table_wizard_sub_sub"
+                parent="menu_pedagogy_time_table_wizard_sub"
+                action="action_pedagogy_time_table_wizard"/>
+
+        <!-- form -->
+        <record id="pedagogy_time_table_wizard_form" model="ir.ui.view">
+            <field name="name">pedagogy_time_table_wizard.form</field>
+            <field name="model">pedagogy_time_table_wizard</field>
+            <field name="arch" type="xml">
+                <form string="Time Table">
+                    <field name="name"/>
+                    <field name="image" widget="image"/>
+                    <newline/>
+                    <field name="priority"/>
+                    <newline/>
+                    <field name="partner_id"/>
+                    <field name="date_start"/>
+                    <field name="amount"/>
+                    <field name="date_stop"/>
+                    <field name="observations"/>
+                    <newline/>
+                    <field name="state" widget="statusbar"/>
+                    <button name="sign_done"
+                            states="draft"
+                            string="Done"
+                            icon="gtk-apply"/>
+                    <button name="sign_cancel"
+                            states="draft,done"
+                            string="Cancel"
+                            icon="gtk-cancel"/>
+                </form>
+            </field>
+        </record>
+
+        <!-- tree -->
+        <record id="pedagogy_time_table_wizard_tree" model="ir.ui.view">
+            <field name="name">pedagogy_time_table_wizard.tree</field>
+            <field name="model">pedagogy_time_table_wizard</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="amount"/>
+                    <field name="date_start"/>
+                    <field name="date_stop"/>
+                    <field name="state"/>
+                    <field name="priority"/>
+                    <button name="sign_done"
+                            states="draft"
+                            string="Done"
+                            icon="gtk-apply"/>
+                    <button name="sign_cancel"
+                            states="draft,done"
+                            string="Cancel"
+                            icon="gtk-cancel"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- calendar -->
+        <record id="pedagogy_time_table_wizard_calendar" model="ir.ui.view">
+            <field name="name">pedagogy_time_table_wizard.calendar</field>
+            <field name="view_type">calendar</field>
+            <field name="model">pedagogy_time_table_wizard</field>
+            <field name="arch" type="xml">
+                <calendar string="pedagogy_time_table_wizard" date_start="date_start" color="partner_id"
+                          date_stop="date_stop">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                </calendar>
+            </field>
+        </record>
+
+        <!-- kanban -->
+        <record model="ir.ui.view" id="kanban_view_pedagogy_time_table_wizard">
+            <field name="name">pedagogy_time_table_wizard Kanban</field>
+            <field name="view_type">kanban</field>
+            <field name="model">pedagogy_time_table_wizard</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="priority">
+                    <field name="priority"/>
+                    <field name="color"/>
+                    <field name="date_start"/>
+                    <field name="amount" sum="Total Amount"/>
+                    <templates>
+                        <t t-name="kanban_details">
+                            <ul class="oe_kanban_tooltip">
+                                <li>
+                                    <b>State:</b>
+                                    <field name="state"/>%%
+                                </li>
+                                xx
+                            </ul>
+                        </t>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{kanban_color(record.color.raw_value)} #{border || ''}">
+                                <div class="oe_kanban_box oe_kanban_color_border">
+                                    <table class="oe_kanban_table oe_kanban_box_header oe_kanban_color_bgdark oe_kanban_color_border oe_kanban_draghandle">
+                                        <tr>
+                                            <td align="left" valign="middle" class="oe_kanban_title"
+                                                tooltip="lead_details">
+                                                <field name="name"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <div class="oe_kanban_box_content oe_kanban_color_bglight oe_kanban_box_show_onclick_trigger">
+                                        <div>
+                                            <b>
+                                                <field name="partner_id"/>
+                                            </b>
+                                        </div>
+                                        <div style="padding-left: 0.5em">
+                                            <t t-if="record.observations.raw_value">
+                                                <field name="observations"/>
+                                                <br/>
+                                            </t>
+                                            <i>
+                                                <field name="date_start"/>
+                                                <t t-if="record.date_stop.raw_value">:</t>
+                                                <field name="date_stop"/>
+                                            </i>
+                                        </div>
+                                    </div>
+
+                                    <div class="oe_kanban_buttons_set oe_kanban_color_border oe_kanban_color_bglight oe_kanban_box_show_onclick">
+                                        <div class="oe_kanban_left">
+                                            <a string="Edit" icon="gtk-edit" type="edit"/>
+                                            <a string="Change Color" icon="color-picker" type="color" name="color"/>
+                                            <a string="Send New Email"
+                                               name="%(mail.action_email_compose_message_wizard)d"
+                                               icon="terp-mail-message-new" type="action"/>
+                                        </div>
+                                        <div class="oe_kanban_right">
+                                            <a name="action_done" string="Done" type="object" states="draft"
+                                               icon="kanban-apply"/>
+                                            <a name="action_cancel" string="Cancel" type="object" states="draft,done"
+                                               icon="kanban-stop"/>
+                                        </div>
+                                        <br class="oe_kanban_clear"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Search -->
+        <record id="pedagogy_time_table_wizard_search" model="ir.ui.view">
+            <field name="name">pedagogy_time_table_wizard.search</field>
+            <field name="view_type">search</field>
+            <field name="model">pedagogy_time_table_wizard</field>
+            <field name="arch" type="xml">
+                <search string="pedagogy_time_table_wizard">
+                    <group>
+                        <filter string="Draft" domain="[('state','=','draft')]" icon="terp-document-new"/>
+                        <filter string="Opened" domain="[('state','=','done')]" icon="terp-camera_test"/>
+                        <filter string="Canceled" domain="[('state','=','cancel')]" icon="terp-dialog-close"/>
+                        <separator orientation="vertical"/>
+                        <field name="priority"/>
+                        <field name="name"/>
+                    </group>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Priority" context="{'group_by': 'priority'}" icon="terp-emblem-important"/>
+                        <filter string="State" context="{'group_by': 'state'}"
+                                icon="terp-stock_effects-object-colorize"/>
+                        <separator orientation="vertical"/>
+                        <filter string="Partner" context="{'group_by': 'partner_id'}" icon="terp-partner"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Dashboards -->
+
+    </data>
+</openerp>
