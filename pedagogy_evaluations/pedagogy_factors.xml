@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="pedagogy_factor_form" model="ir.ui.view">
+            <field name="name">pedagogy_factor_form</field>
+            <field name="model">pedagogy.factor</field>
+            <field name="arch" type="xml">
+                <form string="Factor" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pedagogy_factor_tree" model="ir.ui.view">
+            <field name="name">pedagogy_factor_tree</field>
+            <field name="model">pedagogy.factor</field>
+            <field name="arch" type="xml">
+                <tree string="Factors">
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pedagogy_factors_search" model="ir.ui.view">
+            <field name="name">pedagogy_factor_search</field>
+            <field name="model">pedagogy.factor</field>
+            <field name="arch" type="xml">
+                <search string="Factors">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="pedagogy_factors_action" model="ir.actions.act_window">
+            <field name="name">Factors</field>
+            <field name="res_model">pedagogy.factor</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="pedagogy_factors_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a factor.
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+                id="menu_pedagogy_factors"
+                name="Factors"
+                parent="menu_evaluations_root"
+                action="pedagogy_factors_action"
+                sequence="20"
+        />
+
+    </data>
+</openerp>

@@ -1,0 +1,477 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* pedagogy_evaluations
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-08 16:01+0000\n"
+"PO-Revision-Date: 2012-10-08 16:01+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluation:0
+#: view:pedagogy.evaluation.student:0
+#: field:pedagogy.evaluation.student,discipline:0
+#: field:pedagogy.evaluations,discipline:0
+#: view:pedagogy.evaluations.report:0
+#: field:pedagogy.evaluations.report,discipline:0
+msgid "Discipline"
+msgstr "Disciplina"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.class.discipline.teacher:0
+msgid "Information"
+msgstr "Informação"
+
+#. module: pedagogy_evaluations
+#: model:ir.model,name:pedagogy_evaluations.model_pedagogy_evaluations_type
+msgid "pedagogy.evaluations.type"
+msgstr "Tipo de Avaliação"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluation.student:0
+msgid "Calculate"
+msgstr "Calcular"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluation.student:0
+#: view:pedagogy.evaluations:0
+#: field:pedagogy.evaluations,factors:0
+msgid "Factors"
+msgstr "Fatores"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.evaluations,type_year:0
+msgid "Type/Year"
+msgstr "Tipo/Ano"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.evaluations,note:0
+#: view:res.partner:0
+msgid "Note"
+msgstr "Nota"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluation:0
+#: view:pedagogy.evaluation.student:0
+#: view:pedagogy.evaluations.report:0
+msgid "Group By..."
+msgstr "Agrupar por..."
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluation.student:0
+msgid "Observations"
+msgstr "Observações"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluation.student:0
+msgid "Final Note"
+msgstr "Nota Final"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.factor.evaluation,factor:0
+#: field:pedagogy.factor.evaluation.student,factor:0
+msgid "Factor"
+msgstr "Fator"
+
+#. module: pedagogy_evaluations
+#: model:ir.model,name:pedagogy_evaluations.model_pedagogy_factor_evaluation_student
+msgid "pedagogy.factor.evaluation.student"
+msgstr "Fator de Avaliações do Aluno"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.evaluations,formula:0
+msgid "Formula"
+msgstr "Fórmula"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluation:0
+#: view:pedagogy.evaluation.student:0
+#: view:pedagogy.evaluations.report:0
+msgid "Last Year"
+msgstr "Ano Passado"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluation.student:0
+#: field:pedagogy.evaluation.student,evaluation:0
+msgid "Evaluation"
+msgstr "Avaliação"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.evaluations,name:0
+#: field:pedagogy.evaluations.type,name:0
+#: field:pedagogy.evaluations.type.year,name:0
+#: field:pedagogy.factor,name:0
+#: field:pedagogy.wizard.fake_type_year,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluations.type.year:0
+#: model:ir.ui.menu,name:pedagogy_evaluations.menu_pedagogy_evaluations_type_year
+#: model:ir.actions.act_window,name:pedagogy_evaluations.action_pedagogy_evaluations_type_year
+msgid "Evaluations / Type / Year"
+msgstr "Tipo/Ano"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.evaluation.student,final_classification:0
+msgid "Final Classification"
+msgstr "Classificação Final"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.factor,description:0
+#: field:pedagogy.factor.evaluation,description:0
+#: field:pedagogy.factor.evaluation.student,description:0
+msgid "Description"
+msgstr "Descrição"
+
+#. module: pedagogy_evaluations
+#: constraint:pedagogy.evaluations:0
+msgid "Invalid formula"
+msgstr "Fórmula inválida"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.evaluation.student,teacher_observations:0
+msgid "Teacher observations"
+msgstr "Observações do Professor"
+
+#. module: pedagogy_evaluations
+#: model:ir.actions.act_window,name:pedagogy_evaluations.action_pedagogy_evaluations
+#: model:ir.model,name:pedagogy_evaluations.model_pedagogy_evaluations
+msgid "pedagogy.evaluations"
+msgstr "Avaliação"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluation.student:0
+msgid "Arithmetic Note"
+msgstr "Nota Aritmética"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.evaluations,class_discipline_teacher:0
+msgid "Class/Discipline/Teacher"
+msgstr "Classe/Disciplina/Professor"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.evaluation.student,teacher_classification:0
+msgid "Teacher Classification"
+msgstr "Classificação do Professor"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluation.student:0
+msgid "Teacher Note"
+msgstr "Nota do Professor"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluation.student:0
+#: field:pedagogy.evaluation.student,student:0
+#: view:pedagogy.evaluations.report:0
+#: field:pedagogy.evaluations.report,student:0
+msgid "Student"
+msgstr "Aluno"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.factor.evaluation.student,evaluation_student:0
+msgid "Evaluation/Student"
+msgstr "Avaliação/Aluno"
+
+#. module: pedagogy_evaluations
+#: model:ir.ui.menu,name:pedagogy_evaluations.menu_pedagogy_evaluations
+#: model:ir.ui.menu,name:pedagogy_evaluations.menu_pedagogy_evaluations_base
+#: view:pedagogy.class.discipline.teacher:0
+#: field:pedagogy.class.discipline.teacher,evaluations:0
+#: view:pedagogy.evaluation:0
+msgid "Evaluations"
+msgstr "Avaliações"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluation:0
+#: view:pedagogy.evaluation.student:0
+#: view:pedagogy.evaluations.report:0
+msgid "This Year"
+msgstr "Este Ano"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluation:0
+#: view:pedagogy.evaluation.student:0
+#: field:pedagogy.evaluation.student,class:0
+#: view:pedagogy.evaluations:0
+#: field:pedagogy.evaluations,class:0
+#: view:pedagogy.evaluations.report:0
+#: field:pedagogy.evaluations.report,class:0
+msgid "Class"
+msgstr "Classe"
+
+#. module: pedagogy_evaluations
+#: model:ir.actions.act_window,name:pedagogy_evaluations.action_pedagogy_classifications
+#: model:ir.ui.menu,name:pedagogy_evaluations.menu_pedagogy_classifications_parent
+#: model:ir.ui.menu,name:pedagogy_evaluations.menu_pedagogy_classifications
+#: view:pedagogy.evaluation.student:0
+#: view:res.partner:0
+#: field:res.partner,classifications:0
+msgid "Classifications"
+msgstr "Classificações"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.evaluation.student,arithmetic_classification:0
+msgid "Arithmetic Classification"
+msgstr "Classificação Aritmética"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.evaluation.student,end_date:0
+#: field:pedagogy.evaluations,end_date:0
+msgid "end_date"
+msgstr "Data final"
+
+#. module: pedagogy_evaluations
+#: model:ir.model,name:pedagogy_evaluations.model_pedagogy_class_discipline_teacher
+msgid "pedagogy.class.discipline.teacher"
+msgstr "Classe/Disciplina/Professor"
+
+#. module: pedagogy_evaluations
+#: view:res.partner:0
+msgid "Enrollments"
+msgstr "Inscrições"
+
+#. module: pedagogy_evaluations
+#: model:ir.actions.act_window,name:pedagogy_evaluations.action_pedagogy_evaluation_types
+#: model:ir.ui.menu,name:pedagogy_evaluations.menu_pedagogy_evaluation_types
+msgid "Evaluation Types"
+msgstr "Tipos de Avaliações"
+
+#. module: pedagogy_evaluations
+#: model:ir.model,name:pedagogy_evaluations.model_pedagogy_factor
+msgid "pedagogy.factor"
+msgstr "Fator"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.evaluation.student,class_year:0
+#: field:pedagogy.evaluations,class_year:0
+msgid "Class/Year"
+msgstr "Classe/Ano"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.evaluation.student,other_observations:0
+msgid "Other observations"
+msgstr "Outras observações"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluation.student:0
+#: field:pedagogy.evaluation.student,type:0
+#: field:pedagogy.evaluations,type:0
+#: field:pedagogy.evaluations.type.year,type:0
+msgid "Type"
+msgstr "Tipo"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluations.type.year:0
+#: field:pedagogy.evaluations.type.year,date_start:0
+msgid "Start"
+msgstr "Início"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluations.type.year:0
+#: field:pedagogy.evaluations.type.year,date_end:0
+msgid "End"
+msgstr "Fim"
+
+#. module: pedagogy_evaluations
+#: model:ir.model,name:pedagogy_evaluations.model_pedagogy_evaluation_student
+msgid "pedagogy.evaluation.student"
+msgstr "Avaliação do Aluno"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.factor.evaluation.student:0
+#: field:pedagogy.factor.evaluation.student,classification:0
+msgid "Classification"
+msgstr "Classificação"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluation.student:0
+msgid "Get Factors"
+msgstr "Obter Fatores"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.evaluation.student,start_date:0
+#: field:pedagogy.evaluations,start_date:0
+msgid "start_date"
+msgstr "Data de Início"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.evaluation.student,factor_evaluation_student:0
+msgid "Factor/Evaluation"
+msgstr "Fator/Avaliação"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluation:0
+#: view:pedagogy.evaluation.student:0
+#: field:pedagogy.evaluation.student,teacher:0
+#: field:pedagogy.evaluations,teacher:0
+#: view:pedagogy.evaluations.report:0
+#: field:pedagogy.evaluations.report,teacher:0
+#: field:pedagogy.classifications.matrix.selection,teacher:0
+msgid "Teacher"
+msgstr "Professor"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluation:0
+#: view:pedagogy.evaluation.student:0
+#: field:pedagogy.evaluation.student,year:0
+#: field:pedagogy.evaluations,year:0
+#: view:pedagogy.evaluations.report:0
+#: field:pedagogy.evaluations.report,year:0
+#: field:pedagogy.evaluations.type.year,year:0
+msgid "Year"
+msgstr "Ano"
+
+#. module: pedagogy_evaluations
+#: constraint:pedagogy.factor:0
+msgid "Error ! Factor names should only contain lowercase letters, numbers and underscores, and must start with a letter."
+msgstr "Erro! Os nomes dos fatores devem conter apenas letras minúsculas, números e underscores, e devem começar por uma letra."
+
+#. module: pedagogy_evaluations
+#: model:ir.model,name:pedagogy_evaluations.model_res_partner
+msgid "Partner"
+msgstr "Parceiro"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluations.report:0
+#: field:pedagogy.evaluations.report,area:0
+msgid "Area"
+msgstr "Área"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluations.report:0
+#: field:pedagogy.evaluations.report,group:0
+msgid "Group"
+msgstr "Grupo"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluations.report:0
+#: field:pedagogy.evaluations.report,discipline_area:0
+msgid "Discipline Area"
+msgstr "Área da Disciplina"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluations.report:0
+#: field:pedagogy.evaluations.report,discipline_area:0
+msgid "Disc. Area"
+msgstr "Área Discip."
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluations.report:0
+#: field:pedagogy.evaluations.report,evaluation_type:0
+msgid "Evaluation Type"
+msgstr "Tipo de Avaliação"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.evaluations.report:0
+#: field:pedagogy.evaluations.report,evaluation_type:0
+msgid "Eval. Type"
+msgstr "Tipo Aval."
+
+#. module: pedagogy_evaluations
+#: model:ir.actions.act_window,name:pedagogy_evaluations.action_evaluations_report_all
+#: view:pedagogy.evaluations.report:0
+msgid "Evaluations Report"
+msgstr "Análise das Classificações"
+
+#. module: pedagogy_evaluations
+#: model:ir.ui.menu,name:pedagogy_evaluations.menu_action_evaluations_report_all
+msgid "evaluations"
+msgstr "Análise das Classificações"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.factor.evaluation.student:0
+#: field:pedagogy.factor.evaluation.student,factor_evaluation:0
+msgid "Factor Evaluation"
+msgstr "Factor de avaliação"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.factor.evaluation:0
+#: view:pedagogy.factor.evaluation.student:0
+#: field:pedagogy.factor.evaluation,percentage:0
+#: field:pedagogy.factor.evaluation.student,percentage:0
+msgid "Percentage"
+msgstr "Percentagem"
+
+#. module: pedagogy_evaluations
+#: model:ir.actions.act_window,name:pedagogy_evaluations.action_pedagogy_classifications_matrix_selection
+#: model:ir.ui.menu,name:pedagogy_evaluations.menu_pedagogy_classifications_matrix
+msgid "Classifications Matrix"
+msgstr "Classificações da Turma"
+
+#. module: pedagogy_evaluations
+#: code:addons-tko/pedagogy_evaluations/classifications_matrix.py:85
+#, python-format
+msgid "Classifications Matrix"
+msgstr "Classificações da Turma"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.classifications.matrix.selection:0
+msgid "Choose Class and Discipline"
+msgstr "Escolha a Turma e Disciplina"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.classifications.matrix.selection,class_year:0
+msgid "Class/Year"
+msgstr "Turma"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.classifications.matrix.selection,discipline:0
+msgid "Discipline"
+msgstr "Disciplina"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.classifications.matrix.selection:0
+msgid "Load"
+msgstr "Ver"
+
+#. module: pedagogy_evaluations
+#: model:ir.actions.act_window,name:pedagogy_evaluations.action_pedagogy_evaluation_types
+#: model:ir.ui.menu,name:pedagogy_evaluations.menu_pedagogy_evaluation_types
+#: view:pedagogy.initial_wizard.evaluations.type.year:0
+#: field:pedagogy.initial_wizard.evaluations.type.year,fake_type_years:0
+msgid "Evaluation Types"
+msgstr "Tipos de Avaliação"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.wizard.fake_type_year,date_from:0
+msgid "From"
+msgstr "De"
+
+#. module: pedagogy_evaluations
+#: field:pedagogy.wizard.fake_type_year,date_to:0
+msgid "to"
+msgstr "Até"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.initial_wizard.evaluations.type.year:0
+msgid "Next"
+msgstr "Seguinte"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.initial_wizard.evaluations.type.year:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.initial_wizard.evaluations.type.year:0
+msgid "Cancel Assistant?"
+msgstr "Cancelar Assistente?"
+
+#. module: pedagogy_evaluations
+#: view:pedagogy.initial_wizard.evaluations.type.year:0
+msgid "Choose what Types of Evaluations should be created for the new School Year. You can change their dates or delete the ones you don't need."
+msgstr "Escolha que Tipos de Avaliação devem ser criados para o novo Ano Escolar. Pode escolhar as datas ou apagar os tipos que não sejam necessários."
+
+#. modules: pedagogy_evaluations
+#: field:pedagogy.wizard.fake_type_year,wizard:0
+msgid "Wizard"
+msgstr "Assistente"

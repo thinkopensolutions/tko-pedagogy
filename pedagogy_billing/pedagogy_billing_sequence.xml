@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="seq_type_billing" model="ir.sequence.type">
+            <field name="name">Billing</field>
+            <field name="code">billing</field>
+        </record>
+
+        <record id="seq_billing" model="ir.sequence">
+            <field name="name">Billing</field>
+            <field name="code">billing</field>
+            <field name="prefix">Bill/</field>
+            <field name="padding">3</field>
+        </record>
+
+    </data>
+</openerp>

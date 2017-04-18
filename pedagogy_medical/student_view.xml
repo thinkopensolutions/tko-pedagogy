@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="res_partner_inherit_form" model="ir.ui.view">
+            <field name="name">res_partner_inherit_form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <page string="Enrollments" position="after">
+                    <page string="Medical" attrs="{'invisible':[('is_student','=',False)]}">
+                        <group col="6" colspan="4">
+                            <separator string="Hospital" colspan="6"/>
+                            <field name="hospital_id" colspan="3"/>
+                            <field name="physician_id" colspan="3"/>
+                            <separator string="Insurance" colspan="6"/>
+                            <field name="insurance_company_id" colspan="6"/>
+                            <field name="appolice" colspan="3"/>
+                            <field name="plan_type" string="Type" colspan="3"/>
+                        </group>
+                        <separator string="Medical History"/>
+                        <field name="medical_history_ids" colspan="4" context="{'default_student': active_id}"
+                               nolabel="1">
+                            <tree string="Medical History" editable="top">
+                                <field name="issue"/>
+                                <field name="action"/>
+                                <field name="user_id" readonly="1"/>
+                                <field name="date" readonly="1"/>
+                            </tree>
+                        </field>
+                        <separator string="BMI History"/>
+                        <field name="bmi_ids" colspan="4" context="{'default_student': active_id}" nolabel="1">
+                            <tree string="BMIs" editable="top">
+                                <field name="height" on_change="onchange_data(height, weight)"/>
+                                <field name="weight" on_change="onchange_data(height, weight)"/>
+                                <field name="bmi" readonly="1"/>
+                                <field name="bmi_qualitative" readonly="1"/>
+                                <field name="user_id" readonly="1"/>
+                                <field name="measure_date" readonly="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,117 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* pedagogy_evaluation_qualitative
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-24 17:34+0000\n"
+"PO-Revision-Date: 2012-10-24 17:34+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pedagogy_evaluation_qualitative
+#: view:pedagogy.evaluation.qualitative:0
+msgid "To ()"
+msgstr "Até ()"
+
+#. module: pedagogy_evaluation_qualitative
+#: field:pedagogy.evaluation.qualitative,from:0
+msgid "From"
+msgstr "De"
+
+#. module: pedagogy_evaluation_qualitative
+#: field:pedagogy.evaluation.qualitative,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: pedagogy_evaluation_qualitative
+#: model:ir.model,name:pedagogy_evaluation_qualitative.model_pedagogy_evaluation_student
+msgid "pedagogy.evaluation.student"
+msgstr "Classificação"
+
+#. module: pedagogy_evaluation_qualitative
+#: model:ir.actions.act_window,name:pedagogy_evaluation_qualitative.action_pedagogy_evaluation_qualitative
+msgid "Qualitative Grades"
+msgstr "Notas Qualitativas"
+
+#. module: pedagogy_evaluation_qualitative
+#: field:pedagogy.evaluation.student,teacher_qualitative:0
+msgid "Teacher Qualitative"
+msgstr "Nota Qualitativa do Professor/a"
+
+#. module: pedagogy_evaluation_qualitative
+#: view:pedagogy.evaluation.qualitative:0
+msgid "From (>=)"
+msgstr "De (>=)"
+
+#. module: pedagogy_evaluation_qualitative
+#: view:pedagogy.evaluation.student:0
+msgid "Arithmetic Note"
+msgstr "Nota Aritmética"
+
+#. module: pedagogy_evaluation_qualitative
+#: view:pedagogy.evaluation.qualitative:0
+msgid "Note"
+msgstr "Nota"
+
+#. module: pedagogy_evaluation_qualitative
+#: field:pedagogy.evaluation.qualitative,to:0
+msgid "To"
+msgstr "Até"
+
+#. module: pedagogy_evaluation_qualitative
+#: model:ir.model,name:pedagogy_evaluation_qualitative.model_pedagogy_evaluation_qualitative
+msgid "pedagogy.evaluation.qualitative"
+msgstr "Avaliação Qualitativa"
+
+#. module: pedagogy_evaluation_qualitative
+#: field:pedagogy.evaluation.student,arithmetic_qualitative:0
+msgid "Arithmetic Qualitative"
+msgstr "Nota Qualitativa Aritmética"
+
+#. module: pedagogy_evaluation_qualitative
+#: model:ir.ui.menu,name:pedagogy_evaluation_qualitative.menu_pedagogy_evaluation_qualitative
+msgid "pedagogy_evaluation_qualitative"
+msgstr "Avaliação Qualitativa"
+
+#. module: pedagogy_evaluation_qualitative
+#: field:pedagogy.evaluation.qualitative,observations:0
+msgid "Observations"
+msgstr "Observações"
+
+#. module: pedagogy_evaluation_qualitative
+#: view:pedagogy.evaluation.student:0
+msgid "Final Note"
+msgstr "Nota Final"
+
+#. module: pedagogy_evaluation_qualitative
+#: field:pedagogy.evaluation.student,final_qualitative:0
+msgid "Final Qualitative"
+msgstr "Nota Qualitativa"
+
+#. module: pedagogy_evaluation_qualitative
+#: view:pedagogy.evaluation.qualitative:0
+msgid "School Years"
+msgstr "Anos Escolares"
+
+#. module: pedagogy_evaluation_qualitative
+#: field:pedagogy.evaluation.qualitative,years:0
+msgid "Years"
+msgstr "Anos"
+
+#. module: pedagogy_evaluation_qualitative
+#: view:pedagogy.evaluation.student:0
+msgid "Teacher Note"
+msgstr "Nota do Professor/a"
+
+#. module: pedagogy_evaluation_qualitative
+#: sql_constraint:pedagogy.evaluation.qualitative:0
+msgid "\"From\" must be lower than \"To\"!"
+msgstr "O \"De\" deve ser menor que o \"Até\"!"
+

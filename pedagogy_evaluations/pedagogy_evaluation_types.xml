@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="pedagogy_evaluations_type_form" model="ir.ui.view">
+            <field name="name">pedagogy_evaluations_type_form</field>
+            <field name="model">pedagogy.evaluations.type</field>
+            <field name="arch" type="xml">
+                <form string="Evaluations Type" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Evaluation Type"/>
+                            <field name="is_summative"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pedagogy_evaluations_type_tree" model="ir.ui.view">
+            <field name="name">pedagogy_evaluations_type_tree</field>
+            <field name="model">pedagogy.evaluations.type</field>
+            <field name="arch" type="xml">
+                <tree string="Evaluations Type">
+                    <field name="name"/>
+                    <field name="is_summative"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pedagogy_evaluations_type_search" model="ir.ui.view">
+            <field name="name">pedagogy_evaluationstype__search</field>
+            <field name="model">pedagogy.evaluations.type</field>
+            <field name="arch" type="xml">
+                <search string="Evaluations Types">
+                    <field name="name"/>
+                    <group string="School Year">
+                        <filter
+                                string="Summative"
+                                name="is_summative"
+                                domain="[('is_summative', '=', True)]"/>
+                        <filter
+                                string="Not Summative"
+                                name="is_summative"
+                                domain="[('is_summative', '=', False)]"/>
+                    </group>
+                    <group expand="0" string="Group By...">
+                        <filter string="Is Summative" name="is_summative" context="{'group_by':'is_summative'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="pedagogy_evaluation_types_action" model="ir.actions.act_window">
+            <field name="name">Evaluation Types</field>
+            <field name="res_model">pedagogy.evaluations.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="pedagogy_evaluations_type_search"/>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add evaluation types.
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+                id="menu_pedagogy_evaluation_types"
+                name="Evaluation Types"
+                parent="menu_evaluations_root"
+                action="pedagogy_evaluation_types_action"
+                sequence="10"
+        />
+
+    </data>
+</openerp>

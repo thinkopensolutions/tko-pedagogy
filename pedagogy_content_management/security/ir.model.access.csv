@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_task_teacher,task_teacher,project.model_project_task,pedagogy_base.group_pedagogy_teacher,1,1,0,0
+access_task_user,task_user,project.model_project_task,pedagogy_base.group_pedagogy_user,1,0,0,0
+access_task_director,task_director,project.model_project_task,pedagogy_base.group_pedagogy_director,1,1,1,1
+access_content_director,content_director,model_pedagogy_content,pedagogy_base.group_pedagogy_director,1,1,1,1
+access_content_area_director,content_area_director,model_pedagogy_content_area,pedagogy_base.group_pedagogy_director,1,1,1,1
+access_topic_director,topic_director,model_pedagogy_topic,pedagogy_base.group_pedagogy_director,1,1,1,1
+access_project_task_work_teacher,project_task_work_teacher,project.model_project_task_work,pedagogy_base.group_pedagogy_teacher,1,1,1,1
+access_project_project_teacher,project_project_teacher,project.model_project_project,pedagogy_base.group_pedagogy_teacher,1,1,1,1
+access_account_analytic_account_teacher,account_analytic_account_teacher,analytic.model_account_analytic_account,pedagogy_base.group_pedagogy_teacher,1,1,1,1

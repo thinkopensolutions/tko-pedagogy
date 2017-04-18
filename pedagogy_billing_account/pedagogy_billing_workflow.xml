@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="act_invoice" model="workflow.activity">
+            <field name="wkf_id" ref="pedagogy_billing.wkf_bill"/>
+            <field name="name">invoice</field>
+            <field name="kind">function</field>
+            <field name="action">action_invoice_create()</field>
+        </record>
+
+        <record id="t_invoice" model="workflow.transition">
+            <field name="act_from" ref="pedagogy_billing.act_confirmed"/>
+            <field name="act_to" ref="act_invoice"/>
+            <field name="signal">invoice</field>
+        </record>
+
+    </data>
+</openerp>
