@@ -23,8 +23,8 @@
 
 from datetime import datetime
 
-from osv import osv, fields
-from tools.translate import _
+from openerp import _
+from openerp.osv import osv, fields
 
 
 class factor_evaluation_student(osv.osv):

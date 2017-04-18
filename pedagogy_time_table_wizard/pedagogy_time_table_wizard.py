@@ -24,9 +24,9 @@
 
 import time
 
-import netsvc
-from osv import osv, fields
-from tools.translate import _
+from openerp import _
+from openerp import netsvc
+from openerp.osv import osv, fields
 
 STATES = [
     ('draft', _('Draft')),

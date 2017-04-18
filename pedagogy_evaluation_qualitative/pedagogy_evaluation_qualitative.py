@@ -21,7 +21,8 @@
 #
 ##############################################################################
 
-from osv import osv, fields
+import time
+from openerp.osv import osv, fields
 
 
 class pedagogy_evaluation_qualitative(osv.osv):

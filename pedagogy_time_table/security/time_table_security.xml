@@ -2,10 +2,12 @@
 <openerp>
     <data>
         <record model="ir.ui.menu" id="menu_pedagogy_schedules_base">
+            <field name="name">Pedagogy Teacher/Secretary</field>
             <field name="groups_id"
                    eval="[(6,0,[ref('pedagogy_base.group_pedagogy_secretary'),ref('pedagogy_base.group_pedagogy_teacher'),ref('pedagogy_base.group_pedagogy_parent')])]"/>
         </record>
         <record model="ir.ui.menu" id="menu_week_time_table">
+            <field name="name">Pedagogy</field>
             <field name="groups_id" eval="[(6,0,[ref('pedagogy_base.group_pedagogy_pedagogy')])]"/>
         </record>
 
@@ -13,32 +15,29 @@
             <field name="name">Parent Time Table Rule</field>
             <field ref="model_pedagogy_time_table" name="model_id"/>
             <field name="groups" eval="[(4, ref('pedagogy_base.group_pedagogy_parent'))]"/>
-            <field name="domain_force">
-                ['|',('class_discipline_teacher_id.class_year.enrollments.student.mother.user_id.id','=',user.id),('class_discipline_teacher_id.class_year.enrollments.student.father.user_id.id','=',user.id)]
-            </field>
+            <!--<field name="domain_force">['|',('class_discipline_teacher_id.class_year.enrollments.student.mother.user_id.id','=',user.id),('class_discipline_teacher_id.class_year.enrollments.student.father.user_id.id','=',user.id)]</field>-->
         </record>
         <record id="teacher_time_table_rule" model="ir.rule">
             <field name="name">Teacher Time Table Rule</field>
             <field ref="model_pedagogy_time_table" name="model_id"/>
             <field name="groups" eval="[(4, ref('pedagogy_base.group_pedagogy_teacher'))]"/>
-            <field name="domain_force">[('class_discipline_teacher_id.teacher.user_id.id','=',user.id)]</field>
+            <!--<field name="domain_force">[('class_discipline_teacher_id.teacher.user_id.id','=',user.id)]</field>-->
         </record>
         <record id="coordinator_time_table_rule" model="ir.rule">
             <field name="name">Coordinator Time Table Rule</field>
             <field ref="model_pedagogy_time_table" name="model_id"/>
             <field name="groups" eval="[(4, ref('pedagogy_base.group_pedagogy_coordinator'))]"/>
-            <field name="domain_force">['|',
-                ('class_discipline_teacher_id.teacher.user_id.id','=',user.id),
-                '|',
-                ('class_discipline_teacher_id.class_year.year.coordinator.user_id.id','=',user.id),
-                ('class_discipline_teacher_id.class_year.class_id.group_id.group_area.coordinator.user_id.id','=',user.id)]
-            </field>
+            <!--<field name="domain_force">['|',
+                                            ('class_discipline_teacher_id.teacher.user_id.id','=',user.id),
+                                            '|',
+                                                ('class_discipline_teacher_id.class_year.year.coordinator.user_id.id','=',user.id),
+                                                ('class_discipline_teacher_id.class_year.class_id.group_id.group_area.coordinator.user_id.id','=',user.id)]</field>-->
         </record>
         <record id="secretary_time_table_rule" model="ir.rule">
             <field name="name">Secretary Time Table Rule</field>
             <field ref="model_pedagogy_time_table" name="model_id"/>
             <field name="groups" eval="[(4, ref('pedagogy_base.group_pedagogy_secretary'))]"/>
-            <field name="domain_force">[(1,'=',1)]</field>
+            <!--<field name="domain_force">[(1,'=',1)]</field>-->
         </record>
     </data>
 </openerp>

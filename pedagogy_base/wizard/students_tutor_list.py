@@ -21,7 +21,7 @@
 #
 ##############################################################################
 
-from osv import fields, osv
+from openerp.osv import fields, osv
 
 
 class students_tutor_list(osv.osv_memory):

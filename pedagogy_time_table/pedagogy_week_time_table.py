@@ -25,8 +25,7 @@ from calendar import Calendar
 from datetime import date, time, datetime
 from dateutil.relativedelta import relativedelta
 
-from osv import fields
-from osv import osv
+from openerp.osv import osv, fields
 
 DATETIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 

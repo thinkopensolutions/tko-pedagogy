@@ -32,53 +32,55 @@
         <!-- form -->
         <record id="pedagogy_time_table_wizard_form" model="ir.ui.view">
             <field name="name">pedagogy_time_table_wizard.form</field>
-            <field name="view_type">form</field>
             <field name="model">pedagogy_time_table_wizard</field>
             <field name="arch" type="xml">
-                <field name="name"/>
-                <field name="image" widget="image"/>
-                <newline/>
-                <field name="priority"/>
-                <newline/>
-                <field name="partner_id"/>
-                <field name="date_start"/>
-                <field name="amount"/>
-                <field name="date_stop"/>
-                <field name="observations"/>
-                <newline/>
-                <field name="state" widget="statusbar"/>
-                <button name="sign_done"
-                        states="draft"
-                        string="Done"
-                        icon="gtk-apply"/>
-                <button name="sign_cancel"
-                        states="draft,done"
-                        string="Cancel"
-                        icon="gtk-cancel"/>
+                <form string="Time Table">
+                    <field name="name"/>
+                    <field name="image" widget="image"/>
+                    <newline/>
+                    <field name="priority"/>
+                    <newline/>
+                    <field name="partner_id"/>
+                    <field name="date_start"/>
+                    <field name="amount"/>
+                    <field name="date_stop"/>
+                    <field name="observations"/>
+                    <newline/>
+                    <field name="state" widget="statusbar"/>
+                    <button name="sign_done"
+                            states="draft"
+                            string="Done"
+                            icon="gtk-apply"/>
+                    <button name="sign_cancel"
+                            states="draft,done"
+                            string="Cancel"
+                            icon="gtk-cancel"/>
+                </form>
             </field>
         </record>
 
         <!-- tree -->
         <record id="pedagogy_time_table_wizard_tree" model="ir.ui.view">
             <field name="name">pedagogy_time_table_wizard.tree</field>
-            <field name="view_type">tree</field>
             <field name="model">pedagogy_time_table_wizard</field>
             <field name="arch" type="xml">
-                <field name="name"/>
-                <field name="partner_id"/>
-                <field name="amount"/>
-                <field name="date_start"/>
-                <field name="date_stop"/>
-                <field name="state"/>
-                <field name="priority"/>
-                <button name="sign_done"
-                        states="draft"
-                        string="Done"
-                        icon="gtk-apply"/>
-                <button name="sign_cancel"
-                        states="draft,done"
-                        string="Cancel"
-                        icon="gtk-cancel"/>
+                <tree>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="amount"/>
+                    <field name="date_start"/>
+                    <field name="date_stop"/>
+                    <field name="state"/>
+                    <field name="priority"/>
+                    <button name="sign_done"
+                            states="draft"
+                            string="Done"
+                            icon="gtk-apply"/>
+                    <button name="sign_cancel"
+                            states="draft,done"
+                            string="Cancel"
+                            icon="gtk-cancel"/>
+                </tree>
             </field>
         </record>
 

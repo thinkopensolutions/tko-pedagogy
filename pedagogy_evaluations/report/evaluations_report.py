@@ -21,8 +21,8 @@
 #
 ##############################################################################
 
-import tools
-from osv import fields, osv
+from openerp import tools
+from openerp.osv import fields, osv
 
 
 class evaluations_report(osv.osv):

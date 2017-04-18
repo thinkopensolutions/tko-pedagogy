@@ -161,16 +161,16 @@
         <menuitem
                 id="menu_classes_curricular"
                 name="Curricular Classes"
-                parent="pedagogy_base.menu_secretary_config"
+                parent="pedagogy_base.menu_classes"
                 action="pedagogy_class_curricular_action"
-                sequence="80"/>
+                sequence="20"/>
 
         <menuitem
                 id="menu_classes_non_curricular"
                 name="Extra Activities"
-                parent="pedagogy_base.menu_secretary_config"
+                parent="pedagogy_base.menu_classes"
                 action="pedagogy_class_non_curricular_action"
-                sequence="90"/>
+                sequence="30"/>
 
     </data>
 </openerp>

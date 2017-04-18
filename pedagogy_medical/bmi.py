@@ -21,9 +21,9 @@
 #
 ##############################################################################
 
-from datetime import datetime
+from openerp.osv import osv, fields
 
-from osv import osv, fields
+from datetime import datetime
 
 
 class bmi(osv.osv):

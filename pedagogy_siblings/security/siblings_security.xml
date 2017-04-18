@@ -6,9 +6,7 @@
             <field name="name">Parent Rule</field>
             <field ref="base.model_res_partner" name="model_id"/>
             <field name="groups" eval="[(4, ref('pedagogy_base.group_pedagogy_parent'))]"/>
-            <field name="domain_force">
-                [('is_student','=',True),'|',('mother_id.user_id.id','=',user.id),('father_id.user_id.id','=',user.id)]
-            </field>
+            <!--<field name="domain_force">[('is_student','=',True),'|',('mother_id.user_id.id','=',user.id),('father_id.user_id.id','=',user.id)]</field>-->
         </record>
 
     </data>

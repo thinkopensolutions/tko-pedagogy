@@ -21,8 +21,8 @@
 #
 ##############################################################################
 
-import tools
-from osv import fields, osv
+from openerp import tools
+from openerp.osv import fields, osv
 
 
 class enrollments_report_with_type(osv.osv):

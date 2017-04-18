@@ -111,7 +111,7 @@
                 name="Classes/Years"
                 parent="menu_secretary_config"
                 action="pedagogy_class_year_action"
-                sequence="10"/>
+                sequence="20"/>
 
     </data>
 </openerp>

@@ -21,9 +21,8 @@
 #
 ##############################################################################
 
-import tools
-from osv import fields
-from osv import osv
+from openerp import tools
+from openerp.osv import osv, fields
 
 
 class enrollments_grouped_by_year_class_type(osv.osv):

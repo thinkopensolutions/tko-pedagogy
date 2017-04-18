@@ -23,8 +23,7 @@
 
 from datetime import datetime
 
-from osv import fields
-from osv import osv
+from openerp.osv import osv, fields
 
 
 class pedagogy_group(osv.osv):

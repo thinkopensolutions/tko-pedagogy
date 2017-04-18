@@ -21,8 +21,7 @@
 #
 ##############################################################################
 
-from osv import fields
-from osv import osv
+from openerp.osv import osv, fields
 
 
 class task(osv.osv):

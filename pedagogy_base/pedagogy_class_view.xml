@@ -59,9 +59,9 @@
         <menuitem
                 id="menu_classes"
                 name="Classes"
-                parent="menu_secretary_config"
+                parent="menu_classes_years"
                 action="pedagogy_class_action"
-                sequence="70"/>
+                sequence="10"/>
 
     </data>
 </openerp>

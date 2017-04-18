@@ -23,7 +23,7 @@
 
 {
     'name': 'Pedagogy Evaluation Qualitative',
-    'version': '0.018',
+    'version': '0.019',
     'category': 'Pedagogy',
     'sequence': 38,
     'complexity': 'normal',
@@ -36,9 +36,9 @@
                 'pedagogy_evaluations',
                 ],
     'init_xml': [],
-    'update_xml': ['pedagogy_evaluation_qualitative_view.xml',
-                   'pedagogy_classifications.xml',
-                   ],
+    'data': ['pedagogy_evaluation_qualitative_view.xml',
+             'pedagogy_classifications.xml',
+             ],
     'demo_xml': [
     ],
     'installable': True,

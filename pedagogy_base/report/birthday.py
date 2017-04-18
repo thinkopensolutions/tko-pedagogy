@@ -23,7 +23,7 @@
 
 import time
 
-from report import report_sxw
+from openerp.report import report_sxw
 
 
 class birthday(report_sxw.rml_parse):

@@ -23,14 +23,13 @@
 
 from datetime import datetime
 
-import tools
-from osv import fields
-from osv import osv
-from tools.translate import _
+from openerp import tools, _
+from openerp.osv import osv, fields
 
 
 class pedagogy_enrollment(osv.osv):
     _name = 'pedagogy.enrollment'
+    _inherit = 'mail.thread'
     _description = 'Enrollments'
 
     _state_dict_tansl = {
@@ -113,24 +112,27 @@ class pedagogy_enrollment(osv.osv):
 
     _columns = {
         'name': fields.function(_get_name, fnct_search=_enrollment_search, string='Name', method=True, type='char',
-                                size=128),
-        'number': fields.char('Number', size=64),
-        'class_year_id': fields.many2one('pedagogy.class.year', 'Class/Year', required=True),
+                                size=128, track_visibility='onchange'),
+        'number': fields.char('Number', size=64, track_visibility='onchange'),
+        'class_year_id': fields.many2one('pedagogy.class.year', 'Class/Year', required=True,
+                                         track_visibility='onchange'),
         'class_id': fields.related('class_year_id', 'class_id', type='many2one', relation='pedagogy.class',
-                                   string='Class'),
-        'group_id': fields.related('class_id', 'group_id', type='many2one', relation='pedagogy.group', readonly=True),
+                                   string='Class', track_visibility='onchange'),
+        'group_id': fields.related('class_id', 'group_id', type='many2one', relation='pedagogy.group', readonly=True,
+                                   track_visibility='onchange'),
         'group_area_id': fields.related('group_id', 'group_area_id', type='many2one', relation='pedagogy.group.area',
-                                        string='Area', readonly=True),
+                                        string='Area', readonly=True, track_visibility='onchange'),
         'year_id': fields.related('class_year_id', 'year_id', type='many2one', relation='pedagogy.school.year',
-                                  string='Year'),
+                                  string='Year', track_visibility='onchange'),
         'student_id': fields.many2one('res.partner', 'Student', domain=[('is_student', '=', True)], ondelete='cascade',
-                                      required=True),
+                                      required=True, track_visibility='onchange'),
         'state': fields.selection([('new', 'New'),
                                    ('pre_enrolled', 'Pre-Enrolled'),
                                    ('enrolled', 'Enrolled'),
                                    ('canceled', 'Canceled'),
-                                   ('suspended', 'Suspended')], 'State', required=True, readonly=True),
-        'observations': fields.text('Observations', size=128),
+                                   ('suspended', 'Suspended')], 'State', required=True, readonly=True,
+                                  track_visibility='onchange'),
+        'observations': fields.text('Observations', size=128, track_visibility='onchange'),
         'history_ids': fields.one2many('pedagogy.enrollment.history', 'enrollment_id', 'History'),
     }
 

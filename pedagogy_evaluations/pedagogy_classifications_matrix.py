@@ -26,8 +26,8 @@ from datetime import datetime, date
 from lxml.builder import E
 
 from lxml.etree import tostring as xml_to_string
-from osv import osv, fields
-from tools.translate import _
+from openerp import _
+from openerp.osv import osv, fields
 
 DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
 FACTOR_SEPARATOR = u'_'

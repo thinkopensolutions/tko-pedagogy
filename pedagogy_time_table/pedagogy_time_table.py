@@ -21,8 +21,7 @@
 #
 ##############################################################################
 
-from osv import fields
-from osv import osv
+from openerp.osv import osv, fields
 
 
 class pedagogy_time_table(osv.osv):

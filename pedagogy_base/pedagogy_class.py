@@ -21,9 +21,8 @@
 #
 ##############################################################################
 
-from osv import fields
-from osv import osv
-from tools.translate import _
+from openerp import _
+from openerp.osv import osv, fields
 
 
 class pedagogy_class(osv.osv):

@@ -7,14 +7,17 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-                <div class="oe_edit_only" position="replace">
+                <div class="oe_edit_only" position="replace"/>
+                <field name="image" position="after">
                     <div class="oe_edit_only">
+                        <!-- with l10n_br_base installed it replaces  div with use_parent_address field, like it is being replaced 2 times somehow-->
+                        <field name="use_parent_address" invisible="1"/>
                         <field name="is_student" class="oe_inline"/>
                         <label for="is_student" string="Is Student?"/>
                         <field name="is_company" on_change="onchange_type(is_company)" class="oe_inline"/>
                         <label for="is_company" string="Is a Company?"/>
                     </div>
-                </div>
+                </field>
                 <field name="parent_id" position="replace">
                     <field name="parent_id"
                            placeholder="Company"
@@ -87,10 +90,10 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_tree"/>
             <field name="arch" type="xml">
-                <field name="name" position="before">
+                <field name="display_name" position="before">
                     <field name="student_number"/>
                 </field>
-                <field name="name" position="after">
+                <field name="display_name" position="after">
                     <field name="gender" invisible="1"/>
                     <field name="enrollment_id"/>
                     <field name="tutor_id"/>

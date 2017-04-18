@@ -2,10 +2,12 @@
 <openerp>
     <data noupdate="0">
         <record model="ir.ui.menu" id="next_id_005">
+            <field name="name">Pedagogy Teacher</field>
             <field name="groups_id"
                    eval="[(6,0,[ref('pedagogy_base.group_pedagogy_pedagogy'),ref('pedagogy_base.group_pedagogy_teacher')])]"/>
         </record>
         <record model="ir.ui.menu" id="menu_pedagogy_task">
+            <field name="name">Pedagogy Task</field>
             <field name="groups_id" eval="[(6,0,[ref('pedagogy_base.group_pedagogy_pedagogy')])]"/>
         </record>
     </data>

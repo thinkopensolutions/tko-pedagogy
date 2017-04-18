@@ -23,7 +23,7 @@
 
 from datetime import datetime
 
-from osv import fields, osv
+from openerp.osv import fields, osv
 
 
 class classes_wizard(osv.osv_memory):

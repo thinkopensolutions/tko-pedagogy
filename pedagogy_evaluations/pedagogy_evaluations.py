@@ -21,8 +21,9 @@
 #
 ##############################################################################
 
-from osv import osv, fields
-from tools.translate import _
+
+from openerp import _
+from openerp.osv import osv, fields
 
 
 class pedagogy_evaluations_type(osv.osv):

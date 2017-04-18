@@ -23,16 +23,17 @@
 
 from datetime import date, datetime
 
-from osv import fields
-from osv import osv
+from openerp.osv import osv, fields
 
 
 class pedagogy_student(osv.osv):
     _name = 'res.partner'
     _inherit = 'res.partner'
 
-    def name_get(self, cr, user, ids, context={}):
+    def name_get(self, cr, user, ids, context=None):
         res = []
+        if not context:
+            context = {}
         if not 'default_is_student' in context:
             res = super(pedagogy_student, self).name_get(cr, user, ids, context=context)
         else:

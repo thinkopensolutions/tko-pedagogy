@@ -21,7 +21,7 @@
 #
 ##############################################################################
 
-from osv import osv
+from openerp.osv import osv
 
 
 class pedagogy_student(osv.osv):

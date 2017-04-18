@@ -23,7 +23,7 @@
 
 {
     'name': 'Pedagogy Attendances',
-    'version': '0.047',
+    'version': '0.049',
     'category': 'Pedagogy',
     'sequence': 38,
     'complexity': 'normal',
@@ -37,7 +37,7 @@
                 'pedagogy_time_table',
                 ],
     'init_xml': [],
-    'update_xml': [
+    'data': [
         'security/ir.model.access.csv',
         'pedagogy_attendances_view.xml',
         'pedagogy_attendances_report_view.xml',

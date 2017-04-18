@@ -20,8 +20,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from osv import fields
-from osv import osv
+from openerp.osv import osv, fields
 
 
 class pedagogy_activity(osv.osv):
