@@ -1,9 +1,0 @@
-"id","name","bmi_from","bmi_to"
-bmi_1,"Very severely underweight",0,15
-bmi_2,"Severely underweight",15,16
-bmi_3,"Underweight",16,19,
-bmi_4,"Normal (healthy weight)",19,25
-bmi_5,"Overweight",25,30
-bmi_6,"Obese Class I (Moderately obese)",30,35
-bmi_7,"Obese Class II (Severely obese)",35,40
-bmi_8,"Obese Class III (Very severely obese)",40,999
